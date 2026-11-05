@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="description" content="Aetherion — curated aesthetic objects and intelligent electronics for modern living.">
+  <title>Aetherion — Curated Aesthetic Objects & Electronics</title>
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="light-aesthetic">
+  <div class="light-grain" aria-hidden="true"></div>
+  <div class="ambient-sun ambient-sun-a"></div>
+  <div class="ambient-sun ambient-sun-b"></div>
+
+  <!-- Announcement Bar (Pinterest Inspiration Banner) -->
+  <div class="announcement">
+    <div class="announcement-inner">
+      <span class="announcement-pin-dot"></span>
+      <span class="announcement-text">Curated for a life in motion</span>
+      <span class="announcement-sep">/</span>
+      <span>Complimentary express delivery</span>
+      <span class="announcement-sep">/</span>
+      <span class="announcement-highlight">Save objects to your aesthetic boards</span>
+      <a href="#/shop">Explore Series 04 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <!-- Pinterest Editorial Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <!-- Brand -->
+      <a class="brand" href="#/" aria-label="Aetherion home">
+        <span class="brand-pin-badge">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="20" fill="none" stroke="#e60023" stroke-width="2" opacity=".85"/>
+            <ellipse cx="24" cy="24" rx="20" ry="7.5" fill="none" stroke="#1c1917" stroke-width="1.5" transform="rotate(-28 24 24)" opacity=".75"/>
+            <circle cx="24" cy="24" r="4" fill="#e60023"/>
+          </svg>
+        </span>
+        <span class="brand-name">AETHERION</span>
+      </a>
+
+      <!-- Primary Nav -->
+      <nav class="nav" aria-label="Primary">
+        <a href="#/shop" data-nav="shop">Explore Pins</a>
+        <a href="#/boards" data-nav="boards">Moodboards</a>
+        <a href="#/vision" data-nav="vision">Materials</a>
+        <a href="#/support" data-nav="support">Care</a>
+        <a href="#/account" data-nav="account">Account</a>
+      </nav>
+
+      <!-- Pinterest Quick Search Pill -->
+      <div class="header-search-bar" id="header-search-container">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="quick-search-input" placeholder="Search aesthetic pins, desk setups, soundscapes..." autocomplete="off">
+        <button type="button" class="search-clear-btn" id="quick-search-clear" aria-label="Clear search" hidden>×</button>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Drawer Toggle for Mobile -->
+        <button class="icon-btn mobile-only" id="search-toggle" aria-label="Search" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        </button>
+
+        <!-- Saved / Moodboards Shortcut -->
+        <a class="header-action-pill saved-link" href="#/boards" aria-label="Saved Boards">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="action-icon">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="action-label">Moodboards</span>
+          <span class="badge-count" id="saved-count">0</span>
+        </a>
+
+        <!-- Cart / Bag Link -->
+        <a class="header-action-pill cart-link" href="#/cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="action-icon">
+            <path d="M4 7h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 7V5.8A3 3 0 0 1 12 3a3 3 0 0 1 3 2.8V7"/>
+          </svg>
+          <span class="action-label">Bag</span>
+          <span class="badge-count" id="cart-count">0</span>
+        </a>
+
+        <!-- Sign in / Account Pill -->
+        <a class="pill-link" href="#/signin" id="account-pill">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Search Drawer (Retained for compatibility) -->
+  <div class="search-drawer" id="search-drawer" hidden>
+    <div class="search-inner">
+      <form id="search-form" role="search">
+        <input type="search" id="search-input" placeholder="Search devices, ideas, aesthetic setups" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <button class="search-close" id="search-close" type="button" aria-label="Close search">Close</button>
+    </div>
+  </div>
+
+  <!-- Save to Board Modal (Pinterest Board Picker) -->
+  <div class="board-modal-overlay" id="board-modal" hidden>
+    <div class="board-modal-card" role="dialog" aria-modal="true" aria-labelledby="board-modal-title">
+      <div class="board-modal-header">
+        <h3 id="board-modal-title">Save to Board</h3>
+        <button type="button" class="modal-close-btn" id="close-board-modal" aria-label="Close modal">×</button>
+      </div>
+      <div class="board-pin-preview" id="board-pin-preview">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="board-search-wrap">
+        <input type="text" id="board-search-input" placeholder="Search your boards...">
+      </div>
+      <div class="board-list" id="board-list">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="create-board-wrap">
+        <form id="create-board-form">
+          <input type="text" id="new-board-name" placeholder="Create new board..." required maxlength="40">
+          <button type="submit" class="btn-create-board">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Single Page Content -->
+  <main id="app" class="app-shell"></main>
+
+  <!-- Pinterest Style Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand footer-logo">
+          <span class="brand-pin-badge small">
+            <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">
+              <circle cx="24" cy="24" r="20" fill="none" stroke="#e60023" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="5" fill="#e60023"/>
+            </svg>
+          </span>
+          <span class="brand-text">AETHERION</span>
+        </div>
+        <p class="footer-statement">Objects for a life<br><em>in motion.</em></p>
+        <p>Tactile intelligence, organic materials, and quiet electronics. Designed in Bengaluru with an editorial spirit for living spaces.</p>
+        <div class="footer-note">Curated aesthetic commerce environment built with love and precision.</div>
+      </div>
+      <div class="footer-columns">
+        <div>
+          <h4>Moodboards</h4>
+          <a href="#/shop?category=Computing">☕ Desk Aesthetics</a>
+          <a href="#/shop?category=Mobile">📱 Pocket Essentials</a>
+          <a href="#/shop?category=Audio">🎧 Sound & Silence</a>
+          <a href="#/shop?category=Home">🌿 Living Spaces</a>
+          <a href="#/shop?category=Wearables">⌚ Wearable Harmony</a>
+          <a href="#/boards">📌 All Curated Boards</a>
+        </div>
+        <div>
+          <h4>Care & Support</h4>
+          <a href="#/support">Help Centre</a>
+          <a href="#/support">Report an Issue</a>
+          <a href="#/support">Aether Care Plan</a>
+          <a href="#/account">Order History</a>
+          <a href="#/cart">View Bag</a>
+        </div>
+        <div>
+          <h4>Editorial & House</h4>
+          <a href="#/vision">Materials & Design</a>
+          <a href="#/vision">Tactile Philosophy</a>
+          <a href="#/signin">Aether ID Portal</a>
+          <a href="#/admin">Operations Desk</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aetherion Systems Pvt. Ltd. · Curated Pinterest Aesthetic</span>
+      <span>Bengaluru · Tokyo · Copenhagen · Helsinki</span>
+      <span>Privacy · Terms · Sustainability · Accessibility</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

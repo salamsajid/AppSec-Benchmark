@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" fill="none">
+  <defs>
+    <linearGradient id="frameMetal" x1="110" y1="120" x2="710" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AAB3C2"/>
+      <stop offset=".2" stop-color="#5A6472"/>
+      <stop offset=".42" stop-color="#1F252E"/>
+      <stop offset=".62" stop-color="#77818F"/>
+      <stop offset=".82" stop-color="#252B35"/>
+      <stop offset="1" stop-color="#8D97A5"/>
+    </linearGradient>
+    <linearGradient id="templeMetal" x1="660" y1="150" x2="810" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8993A1"/>
+      <stop offset=".3" stop-color="#404853"/>
+      <stop offset=".58" stop-color="#151A22"/>
+      <stop offset=".84" stop-color="#66707D"/>
+      <stop offset="1" stop-color="#252C36"/>
+    </linearGradient>
+    <linearGradient id="lensDark" x1="140" y1="130" x2="380" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B2A16"/>
+      <stop offset=".32" stop-color="#17140F"/>
+      <stop offset=".7" stop-color="#0A0D14"/>
+      <stop offset="1" stop-color="#05070C"/>
+    </linearGradient>
+    <linearGradient id="lensDarkR" x1="680" y1="130" x2="440" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#352613"/>
+      <stop offset=".34" stop-color="#15120E"/>
+      <stop offset=".72" stop-color="#090C12"/>
+      <stop offset="1" stop-color="#04060A"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="160" y1="150" x2="360" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFDCA6" stop-opacity=".48"/>
+      <stop offset=".42" stop-color="#C88D4B" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#4D6B86" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="amberR" x1="660" y1="150" x2="460" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD9A0" stop-opacity=".42"/>
+      <stop offset=".44" stop-color="#C48745" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#4D6B86" stop-opacity=".07"/>
+    </linearGradient>
+    <linearGradient id="lensGlare" x1="150" y1="140" x2="320" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".4"/>
+      <stop offset=".38" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lensGlareR" x1="670" y1="140" x2="500" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".32"/>
+      <stop offset=".4" stop-color="#FFFFFF" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lensGlow" cx="0" cy="0" r="1" gradientTransform="translate(248 210) rotate(48) scale(120 170)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A5C7FF" stop-opacity=".2"/>
+      <stop offset=".6" stop-color="#9A6CFF" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#9A6CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glassesShadow" x="0" y="20" width="820" height="440" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="26" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="glassesBlur" x="160" y="340" width="520" height="100" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <clipPath id="lensClipL">
+      <path d="M136 178C142 148 164 130 194 128H338C360 128 376 142 380 164L390 232C393 256 376 276 350 276H294C266 276 246 260 238 234L222 184C217 164 202 152 182 152H168C152 152 140 158 136 178Z"/>
+    </clipPath>
+    <clipPath id="lensClipR">
+      <path d="M684 178C678 148 656 130 626 128H482C460 128 444 142 440 164L430 232C427 256 444 276 470 276H526C554 276 574 260 582 234L598 184C603 164 618 152 638 152H652C668 152 680 158 684 178Z"/>
+    </clipPath>
+  </defs>
+  <ellipse cx="410" cy="382" rx="248" ry="20" fill="#01030A" fill-opacity=".7" filter="url(#glassesBlur)"/>
+  <g filter="url(#glassesShadow)">
+    <path d="M118 179C110 177 102 180 96 187" stroke="url(#templeMetal)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M702 179C710 177 718 180 724 187" stroke="url(#templeMetal)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M136 178C142 148 164 130 194 128H338C360 128 376 142 380 164L390 232C393 256 376 276 350 276H294C266 276 246 260 238 234L222 184C217 164 202 152 182 152H168C152 152 140 158 136 178Z" fill="url(#lensDark)"/>
+    <path d="M684 178C678 148 656 130 626 128H482C460 128 444 142 440 164L430 232C427 256 444 276 470 276H526C554 276 574 260 582 234L598 184C603 164 618 152 638 152H652C668 152 680 158 684 178Z" fill="url(#lensDarkR)"/>
+    <g clip-path="url(#lensClipL)">
+      <ellipse cx="245" cy="210" rx="150" ry="110" fill="url(#lensGlow)"/>
+      <path d="M120 254C180 186 240 226 292 162C324 124 362 136 408 106" stroke="#8FA7D8" stroke-opacity=".16" stroke-width="1.4"/>
+      <path d="M120 274C192 208 252 246 310 182C344 148 376 158 414 132" stroke="#7DE9F5" stroke-opacity=".08"/>
+      <path d="M136 178C142 148 164 130 194 128H338C360 128 376 142 380 164L390 232C393 256 376 276 350 276H294C266 276 246 260 238 234L222 184C217 164 202 152 182 152H168C152 152 140 158 136 178Z" fill="url(#amber)"/>
+      <path d="M136 178C142 148 164 130 194 128H338C360 128 376 142 380 164L390 232C393 256 376 276 350 276H294C266 276 246 260 238 234L222 184C217 164 202 152 182 152H168C152 152 140 158 136 178Z" fill="url(#lensGlare)"/>
+      <path d="M160 184C164 160 180 148 202 146H250" stroke="#FFFFFF" stroke-opacity=".52" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="300" y="150" width="48" height="26" rx="8" fill="#66E8FF" fill-opacity=".08" stroke="#8DEFFF" stroke-opacity=".14"/>
+      <circle cx="324" cy="163" r="3" fill="#8DF2FF" fill-opacity=".85"/>
+    </g>
+    <g clip-path="url(#lensClipR)">
+      <ellipse cx="575" cy="210" rx="150" ry="110" fill="url(#lensGlow)"/>
+      <path d="M700 254C640 186 580 226 528 162C496 124 458 136 412 106" stroke="#8FA7D8" stroke-opacity=".12" stroke-width="1.2"/>
+      <path d="M684 178C678 148 656 130 626 128H482C460 128 444 142 440 164L430 232C427 256 444 276 470 276H526C554 276 574 260 582 234L598 184C603 164 618 152 638 152H652C668 152 680 158 684 178Z" fill="url(#amberR)"/>
+      <path d="M684 178C678 148 656 130 626 128H482C460 128 444 142 440 164L430 232C427 256 444 276 470 276H526C554 276 574 260 582 234L598 184C603 164 618 152 638 152H652C668 152 680 158 684 178Z" fill="url(#lensGlareR)"/>
+      <path d="M660 184C656 160 640 148 618 146H570" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="2"/>
+      <rect x="476" y="152" width="42" height="24" rx="8" fill="#66E8FF" fill-opacity=".06" stroke="#8DEFFF" stroke-opacity=".1"/>
+    </g>
+    <path d="M136 178C142 148 164 130 194 128H338C360 128 376 142 380 164L390 232C393 256 376 276 350 276H294C266 276 246 260 238 234L222 184C217 164 202 152 182 152H168C152 152 140 158 136 178Z" stroke="url(#frameMetal)" stroke-width="4"/>
+    <path d="M684 178C678 148 656 130 626 128H482C460 128 444 142 440 164L430 232C427 256 444 276 470 276H526C554 276 574 260 582 234L598 184C603 164 618 152 638 152H652C668 152 680 158 684 178Z" stroke="url(#frameMetal)" stroke-width="4"/>
+    <path d="M142 174C148 150 168 134 194 132H334C354 132 370 144 374 164" stroke="#E8EDF5" stroke-opacity=".22" stroke-width="1"/>
+    <path d="M678 174C672 150 652 134 626 132H486C466 132 450 144 446 164" stroke="#E8EDF5" stroke-opacity=".16" stroke-width=".9"/>
+    <path d="M382 184C400 168 420 168 438 184" stroke="url(#frameMetal)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M374 164C400 146 420 146 446 164" stroke="url(#frameMetal)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M391 252C396 242 403 237 410 237C417 237 424 242 429 252" stroke="#858F9D" stroke-opacity=".55" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="126" cy="174" r="4" fill="#0B0F16" stroke="#8D97A5" stroke-opacity=".55"/>
+    <circle cx="694" cy="174" r="4" fill="#0B0F16" stroke="#8D97A5" stroke-opacity=".45"/>
+    <path d="M196 150C246 134 330 132 380 150" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="1.5"/>
+  </g>
+</svg>

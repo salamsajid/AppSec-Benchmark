@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 640" fill="none">
+  <defs>
+    <linearGradient id="foldFrameL" x1="96" y1="90" x2="410" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1F3F8"/>
+      <stop offset=".18" stop-color="#AEB6C7"/>
+      <stop offset=".42" stop-color="#404957"/>
+      <stop offset=".68" stop-color="#7D879A"/>
+      <stop offset="1" stop-color="#232A36"/>
+    </linearGradient>
+    <linearGradient id="foldFrameR" x1="724" y1="90" x2="410" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8DDE8"/>
+      <stop offset=".2" stop-color="#697383"/>
+      <stop offset=".5" stop-color="#343C49"/>
+      <stop offset=".8" stop-color="#A4ADBD"/>
+      <stop offset="1" stop-color="#262D39"/>
+    </linearGradient>
+    <linearGradient id="foldScreenL" x1="130" y1="125" x2="390" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121C39"/>
+      <stop offset=".45" stop-color="#070C1B"/>
+      <stop offset="1" stop-color="#03060D"/>
+    </linearGradient>
+    <linearGradient id="foldScreenR" x1="700" y1="125" x2="430" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B132A"/>
+      <stop offset=".55" stop-color="#060A17"/>
+      <stop offset="1" stop-color="#02040A"/>
+    </linearGradient>
+    <radialGradient id="foldAurora" cx="0" cy="0" r="1" gradientTransform="translate(416 330) rotate(90) scale(230 320)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7798FF" stop-opacity=".74"/>
+      <stop offset=".48" stop-color="#9A64FF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#55F2FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="foldHinge" x1="410" y1="70" x2="410" y2="556" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9DEE8"/>
+      <stop offset=".2" stop-color="#6E7888"/>
+      <stop offset=".5" stop-color="#1A202B"/>
+      <stop offset=".8" stop-color="#8D97A8"/>
+      <stop offset="1" stop-color="#3C4452"/>
+    </linearGradient>
+    <linearGradient id="foldGlare" x1="120" y1="120" x2="390" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".2"/>
+      <stop offset=".4" stop-color="#FFFFFF" stop-opacity=".02"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="foldShadow" x="20" y="20" width="780" height="620" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="foldBlur" x="100" y="540" width="620" height="100" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <clipPath id="foldClipL"><path d="M128 120L400 90V538L128 568V120Z"/></clipPath>
+    <clipPath id="foldClipR"><path d="M420 90L692 120V568L420 538V90Z"/></clipPath>
+  </defs>
+  <ellipse cx="410" cy="588" rx="290" ry="28" fill="#01030A" fill-opacity=".65" filter="url(#foldBlur)"/>
+  <g filter="url(#foldShadow)">
+    <path d="M96 106L400 70V552L96 588V106Z" fill="url(#foldFrameL)"/>
+    <path d="M420 70L724 106V588L420 552V70Z" fill="url(#foldFrameR)"/>
+    <path d="M112 128L400 96V542L112 574V128Z" fill="#050810"/>
+    <path d="M420 96L708 128V574L420 542V96Z" fill="#04070E"/>
+    <path d="M128 120L400 90V538L128 568V120Z" fill="url(#foldScreenL)"/>
+    <path d="M420 90L692 120V568L420 538V90Z" fill="url(#foldScreenR)"/>
+    <g clip-path="url(#foldClipL)">
+      <circle cx="300" cy="380" r="270" fill="url(#foldAurora)"/>
+      <path d="M120 470C205 378 270 430 326 340C374 263 430 298 470 214" stroke="#8CB4FF" stroke-opacity=".5" stroke-width="1.6"/>
+      <path d="M120 505C220 408 286 470 350 372C397 300 448 322 492 250" stroke="#6CF1FF" stroke-opacity=".28" stroke-width="1.1"/>
+      <ellipse cx="278" cy="352" rx="140" ry="50" stroke="#D3DEFF" stroke-opacity=".38" transform="rotate(-26 278 352)"/>
+      <ellipse cx="278" cy="352" rx="152" ry="56" stroke="#8CF4FF" stroke-opacity=".18" transform="rotate(36 278 352)"/>
+      <circle cx="278" cy="352" r="20" fill="#E5ECFF"/>
+      <circle cx="278" cy="352" r="46" fill="#9CB7FF" fill-opacity=".13"/>
+      <rect x="150" y="142" width="94" height="76" rx="22" fill="#070C18" stroke="#33405C"/>
+      <circle cx="178" cy="172" r="13" fill="#0B1428" stroke="#617092"/>
+      <circle cx="178" cy="172" r="5" fill="#173266"/>
+      <circle cx="216" cy="190" r="10" fill="#0B1428" stroke="#617092"/>
+      <text x="150" y="506" fill="#EDF2FF" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" opacity=".92">07:42</text>
+      <text x="152" y="526" fill="#8CA0CC" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="8.5" letter-spacing="2.5">AETHER FOLD / OPEN</text>
+      <path d="M128 120L400 90V538L128 568V120Z" fill="url(#foldGlare)"/>
+    </g>
+    <g clip-path="url(#foldClipR)">
+      <circle cx="530" cy="400" r="240" fill="url(#foldAurora)"/>
+      <rect x="462" y="154" width="128" height="128" rx="28" fill="#0A1223" fill-opacity=".72" stroke="#344564" stroke-width="1.2"/>
+      <rect x="480" y="172" width="92" height="92" rx="20" fill="url(#foldAurora)"/>
+      <circle cx="526" cy="218" r="23" fill="#DDE7FF" fill-opacity=".92"/>
+      <circle cx="526" cy="218" r="44" fill="#8EA9FF" fill-opacity=".16"/>
+      <path d="M470 340H626M470 358H586M470 376H612" stroke="#A9BCEA" stroke-opacity=".32" stroke-width="1"/>
+      <rect x="470" y="420" width="146" height="62" rx="18" fill="#080F20" stroke="#2D3D5E"/>
+      <path d="M488 442H573M488 458H544" stroke="#778CB9" stroke-opacity=".38"/>
+      <circle cx="424" cy="110" r="5" fill="#070A12" stroke="#485570"/>
+      <path d="M420 90L692 120V568L420 538V90Z" fill="url(#foldGlare)" opacity=".6"/>
+    </g>
+    <path d="M400 70L420 70V552L400 552V70Z" fill="url(#foldHinge)"/>
+    <path d="M404 80V542M416 80V542" stroke="#E6ECF8" stroke-opacity=".24"/>
+    <path d="M406 116H414M406 156H414M406 196H414M406 236H414M406 276H414M406 316H414M406 356H414M406 396H414M406 436H414M406 476H414" stroke="#0A0E17" stroke-opacity=".68"/>
+    <path d="M96.5 106.5L399.5 70.5V551.5L96.5 587.5V106.5Z" stroke="#F4F7FF" stroke-opacity=".27"/>
+    <path d="M420.5 70.5L723.5 106.5V587.5L420.5 551.5V70.5Z" stroke="#F4F7FF" stroke-opacity=".2"/>
+    <path d="M104 170C104 156 110 143 120 134" stroke="#FFFFFF" stroke-opacity=".56" stroke-width="2"/>
+    <rect x="716" y="230" width="5" height="82" rx="2.5" fill="#9CA7B9"/>
+    <rect x="716" y="328" width="5" height="40" rx="2.5" fill="#6E788A"/>
+  </g>
+</svg>

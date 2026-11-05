@@ -1,0 +1,22 @@
+minimumLimaVersion: 2.0.0
+
+base:
+- template:ubuntu-24.04
+
+vmType: vz
+arch: aarch64
+cpus: 4
+memory: 8GiB
+disk: 40GiB
+mountType: virtiofs
+nestedVirtualization: false
+
+mounts: []
+
+containerd:
+  system: false
+  user: false
+
+provision:
+- mode: system
+  file: provision.sh

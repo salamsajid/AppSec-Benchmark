@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 800" fill="none">
+  <defs>
+    <linearGradient id="tabFrame" x1="80" y1="60" x2="540" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDE6F8"/>
+      <stop offset=".26" stop-color="#75819D"/>
+      <stop offset=".55" stop-color="#2E3648"/>
+      <stop offset=".82" stop-color="#AAB6D0"/>
+      <stop offset="1" stop-color="#4A546A"/>
+    </linearGradient>
+    <linearGradient id="tabScreen" x1="120" y1="100" x2="500" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1224"/>
+      <stop offset=".55" stop-color="#0E1B38"/>
+      <stop offset="1" stop-color="#060A14"/>
+    </linearGradient>
+    <radialGradient id="tabGlow" cx="0" cy="0" r="1" gradientTransform="translate(330 390) rotate(55) scale(250 340)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6E8BFF" stop-opacity=".45"/>
+      <stop offset=".5" stop-color="#9F62FF" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#5BEEFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tabPen" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F0F4FF"/>
+      <stop offset=".45" stop-color="#A1AEC9"/>
+      <stop offset=".7" stop-color="#5E6980"/>
+      <stop offset="1" stop-color="#D8E1F3"/>
+    </linearGradient>
+    <filter id="tabShadow" x="0" y="20" width="660" height="780" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#02040B" flood-opacity=".62"/>
+    </filter>
+    <clipPath id="tabClip"><rect x="116" y="96" width="428" height="608" rx="26"/></clipPath>
+  </defs>
+  <g filter="url(#tabShadow)">
+    <rect x="72" y="48" width="516" height="704" rx="46" fill="url(#tabFrame)"/>
+    <rect x="84" y="60" width="492" height="680" rx="38" fill="#090E1A"/>
+    <rect x="116" y="96" width="428" height="608" rx="26" fill="url(#tabScreen)"/>
+    <g clip-path="url(#tabClip)">
+      <rect x="116" y="96" width="428" height="608" fill="url(#tabGlow)"/>
+      <circle cx="330" cy="390" r="150" stroke="#9CB2FF" stroke-opacity=".34"/>
+      <circle cx="330" cy="390" r="104" stroke="#D8E2FF" stroke-opacity=".2"/>
+      <ellipse cx="330" cy="390" rx="188" ry="66" stroke="#74E9FF" stroke-opacity=".24" transform="rotate(-20 330 390)"/>
+      <ellipse cx="330" cy="390" rx="176" ry="60" stroke="#B582FF" stroke-opacity=".22" transform="rotate(34 330 390)"/>
+      <circle cx="330" cy="390" r="18" fill="#E5ECFF"/>
+      <circle cx="330" cy="390" r="38" fill="#A0B3FF" fill-opacity=".14"/>
+      <path d="M150 152H326" stroke="#DCE6FF" stroke-opacity=".36"/>
+      <path d="M150 170H272" stroke="#DCE6FF" stroke-opacity=".16"/>
+      <text x="150" y="658" fill="#EEF3FF" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" opacity=".8">AERO TAB 12</text>
+      <path d="M150 678H330" stroke="#7D91BE" stroke-opacity=".34"/>
+    </g>
+    <rect x="116" y="96" width="428" height="608" rx="26" stroke="#F0F5FF" stroke-opacity=".24"/>
+    <circle cx="330" cy="78" r="3.5" fill="#050912"/>
+    <path d="M88 154C88 114 104 84 126 66" stroke="#F4F7FF" stroke-opacity=".5" stroke-width="2"/>
+  </g>
+  <g transform="rotate(8 574 402)">
+    <rect x="560" y="178" width="22" height="386" rx="11" fill="url(#tabPen)"/>
+    <path d="M560 564H582L571 612L560 564Z" fill="#DCE5F7"/>
+    <path d="M568 596H574" stroke="#3B4357" stroke-width="2"/>
+    <rect x="563" y="206" width="16" height="30" rx="7" fill="#252E42" fill-opacity=".65"/>
+  </g>
+</svg>

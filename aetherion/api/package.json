@@ -1,0 +1,19 @@
+{
+  "name": "aetherion-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aetherion commerce and identity API (security benchmark build)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cookie-parser": "1.4.7",
+    "express": "4.21.2",
+    "fast-xml-parser": "4.5.1",
+    "graphql": "16.10.0",
+    "jwk-to-pem": "2.0.7",
+    "jsonwebtoken": "9.0.2",
+    "pg": "8.13.1"
+  }
+}

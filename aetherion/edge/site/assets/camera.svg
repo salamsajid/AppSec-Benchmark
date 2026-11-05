@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580" fill="none">
+  <defs>
+    <linearGradient id="camBody" x1="150" y1="160" x2="610" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8D3EA"/>
+      <stop offset=".24" stop-color="#5B677F"/>
+      <stop offset=".55" stop-color="#222938"/>
+      <stop offset=".82" stop-color="#697692"/>
+      <stop offset="1" stop-color="#303949"/>
+    </linearGradient>
+    <linearGradient id="camGrip" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3B4356"/>
+      <stop offset=".5" stop-color="#141924"/>
+      <stop offset="1" stop-color="#333B4D"/>
+    </linearGradient>
+    <radialGradient id="camLens" cx="0" cy="0" r="1" gradientTransform="translate(392 314) rotate(58) scale(124)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101B36"/>
+      <stop offset=".55" stop-color="#050912"/>
+      <stop offset="1" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="camGlass" cx="0" cy="0" r="1" gradientTransform="translate(368 282) rotate(48) scale(100)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8EA9FF" stop-opacity=".7"/>
+      <stop offset=".35" stop-color="#6357C8" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#45E3FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="camShadow" x="20" y="30" width="720" height="540" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#02040B" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <g filter="url(#camShadow)">
+    <path d="M190 178H570C590 178 606 194 606 214V434C606 456 588 474 566 474H194C172 474 154 456 154 434V214C154 194 170 178 190 178Z" fill="url(#camBody)"/>
+    <path d="M154 250H606V404H154V250Z" fill="#151B28" fill-opacity=".55"/>
+    <path d="M154 218H606" stroke="#F0F4FF" stroke-opacity=".3"/>
+    <path d="M154 228H606" stroke="#05070D" stroke-opacity=".5"/>
+    <rect x="154" y="178" width="92" height="296" rx="18" fill="url(#camGrip)"/>
+    <path d="M170 206H230M170 226H230M170 246H230M170 266H230M170 286H230M170 306H230M170 326H230M170 346H230M170 366H230M170 386H230M170 406H230M170 426H230" stroke="#66728C" stroke-opacity=".2" stroke-width="2"/>
+    <path d="M198 148C198 128 214 112 234 112H526C546 112 562 128 562 148V178H198V148Z" fill="url(#camBody)"/>
+    <path d="M246 112H334C344 112 352 120 352 130V146H230V128C230 119 237 112 246 112Z" fill="#1B2230"/>
+    <rect x="452" y="130" width="58" height="18" rx="9" fill="#0A0F1A" stroke="#8795B3" stroke-opacity=".4"/>
+    <circle cx="466" cy="139" r="3" fill="#66F0B2"/>
+    <rect x="548" y="232" width="38" height="54" rx="9" fill="#0B101B" stroke="#68758F" stroke-opacity=".55"/>
+    <circle cx="392" cy="326" r="118" fill="#222A3A"/>
+    <circle cx="392" cy="326" r="105" fill="#111722"/>
+    <circle cx="392" cy="326" r="98" fill="url(#camLens)"/>
+    <circle cx="392" cy="326" r="98" fill="url(#camGlass)"/>
+    <circle cx="392" cy="326" r="72" fill="none" stroke="#7C8EB5" stroke-opacity=".35"/>
+    <circle cx="392" cy="326" r="44" fill="#050810"/>
+    <circle cx="392" cy="326" r="18" fill="#101B38"/>
+    <circle cx="372" cy="302" r="13" fill="#DDE9FF" fill-opacity=".32"/>
+    <circle cx="365" cy="298" r="5" fill="#FFFFFF" fill-opacity=".7"/>
+    <circle cx="314" cy="252" r="9" fill="#F1F6FF" fill-opacity=".25"/>
+    <path d="M248 468H512" stroke="#DDE7F9" stroke-opacity=".18"/>
+    <text x="220" y="452" fill="#DCE6FA" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="3" opacity=".72">QUANTUM CAM / 8K</text>
+    <circle cx="594" cy="182" r="7" fill="#111824" stroke="#D9E3F7" stroke-opacity=".35"/>
+    <circle cx="594" cy="182" r="2" fill="#E8F0FF" fill-opacity=".7"/>
+  </g>
+</svg>

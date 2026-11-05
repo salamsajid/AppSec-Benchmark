@@ -1,0 +1,186 @@
+name: aetherion
+
+x-common-env: &common-env
+  NODE_ENV: production
+  TZ: Asia/Kolkata
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: aetherion-db
+    environment:
+      POSTGRES_DB: aetherion
+      POSTGRES_USER: aetherion
+      POSTGRES_PASSWORD: aetherion_lab_db_password
+    volumes:
+      - aetherion-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aetherion -d aetherion"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    networks:
+      - aetherion-net
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    container_name: aetherion-api
+    environment:
+      <<: *common-env
+      PORT: "3000"
+      DATABASE_URL: postgres://aetherion:aetherion_lab_db_password@db:5432/aetherion
+      SESSION_SECRET: aetherion_session_signing_key_1f7b9c4e
+      IDP_BASE: http://idp:4000
+      IDP_CLIENT_ID: aetherion-web
+      IDP_CLIENT_SECRET: aetherion-web-public-9f3c
+      BOT_URL: http://bot:7000
+      LAB_URL: http://lab:8081
+      BOT_TOKEN: aetherion_bot_internal_7d1a
+      BOT_ADMIN_EMAIL: ops@aetherion.store
+      BOT_ADMIN_PASSWORD: "Ops!Aether#2026"
+      FLAG_JKU: "AETH{jku_redirect_admin_1f92}"
+      FLAG_ALG: "AETH{alg_confusion_hs256_44c0}"
+      FLAG_KID: "AETH{kid_traversal_empty_key_9b2d}"
+      FLAG_PREHIJACK: "AETH{oidc_email_prehijack_6e81}"
+      FLAG_CACHE_DECEPTION: "AETH{cache_deception_admin_0d7c}"
+      FLAG_ADMIN_SESSION: "AETH{admin_session_vault_a3f8}"
+      FLAG_CSPT: "AETH{cspt_admin_promotion_3e6b}"
+      FLAG_WIDGET: "AETH{postmessage_widget_token_b8d4}"
+      FLAG_RACE: "AETH{wallet_double_credit_7d90}"
+      FLAG_PROTO: "AETH{prototype_pollution_gadget_1b7d}"
+      FLAG_OTP: "AETH{graphql_alias_otp_6aa2}"
+      FLAG_XSLEAK: "AETH{xsleak_coupon_oracle_c2f7}"
+      FLAG_SAML: "AETH{saml_xsw_admin_5d1e}"
+      FLAG_ORDER_IDOR: "AETH{invoice_idor_admin_order_4e8a}"
+      FLAG_REFUND_OVERFLOW: "AETH{refund_amount_overflow_9c2d}"
+      FLAG_OVERSELL: "AETH{inventory_oversell_race_5b71}"
+      FLAG_PRICE_TAMPER: "AETH{checkout_price_tamper_2d64}"
+      FLAG_RESET_TOKEN: "AETH{reset_token_prediction_8a17}"
+      FLAG_HOST_POISON: "AETH{reset_host_injection_3f09}"
+      FLAG_EMAIL_VERIFY: "AETH{email_verification_bypass_6cd2}"
+      FLAG_CSRF_EMAIL: "AETH{csrf_email_change_1a5f}"
+      FLAG_JWT_NONE: "AETH{jwt_none_algorithm_0e43}"
+      FLAG_JWT_EXPIRED: "AETH{jwt_expired_clock_7b28}"
+      FLAG_SUPPORT_IDOR: "AETH{support_ticket_idor_b95c}"
+      FLAG_SUPPORT_XSS: "AETH{support_ticket_xss_4c0e}"
+      FLAG_SEARCH_SQLI: "AETH{catalog_search_sqli_3e6d}"
+      FLAG_PATH_TRAVERSAL: "AETH{invoice_path_traversal_1e7a}"
+      FLAG_WEBHOOK_HMAC: "AETH{webhook_signature_bypass_5c3f}"
+      FLAG_SSTI: "AETH{notification_template_ssti_0b6e}"
+      FLAG_JSONP_LEAK: "AETH{jsonp_token_leak_8d31}"
+      FLAG_CORS_LEAK: "AETH{cors_origin_reflection_2b84}"
+      FLAG_GRAPHQL_IDOR: "AETH{graphql_order_idor_7a4c}"
+      FLAG_COUPON_STACK: "AETH{coupon_stacking_2f6d}"
+      FLAG_ACCOUNT_EXPORT: "AETH{account_export_authz_9b03}"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - aetherion-net
+    expose:
+      - "3000"
+    restart: unless-stopped
+
+  idp:
+    build: ./idp
+    container_name: aetherion-idp
+    environment:
+      <<: *common-env
+      PORT: "4000"
+      DATABASE_URL: postgres://aetherion:aetherion_lab_db_password@db:5432/aetherion
+      SSO_SECRET: aetherion_sso_signing_key_4c81d2
+      CLIENT_ID: aetherion-web
+      CLIENT_SECRET: aetherion-web-public-9f3c
+      PUBLIC_PATH: /idp
+      ADMIN_EMAIL: ops@aetherion.store
+      ADMIN_PASSWORD: "Ops!Aether#2026"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - aetherion-net
+    expose:
+      - "4000"
+    restart: unless-stopped
+
+  bot:
+    build: ./bot
+    container_name: aetherion-bot
+    environment:
+      <<: *common-env
+      PORT: "7000"
+      APP_BASE: http://aetherion.local:8080
+      BOT_TOKEN: aetherion_bot_internal_7d1a
+      ADMIN_EMAIL: ops@aetherion.store
+      ADMIN_PASSWORD: "Ops!Aether#2026"
+    depends_on:
+      - api
+      - idp
+    networks:
+      - aetherion-net
+    expose:
+      - "7000"
+    restart: unless-stopped
+
+  lab:
+    build: ./lab
+    container_name: aetherion-lab
+    environment:
+      <<: *common-env
+      PORT: "8081"
+      PUBLIC_APP: http://aetherion.local:8080
+      IDP_BASE: http://idp:4000
+      CLIENT_ID: aetherion-web
+      CLIENT_SECRET: aetherion-web-public-9f3c
+      FLAG_OAUTH: "AETH{oauth_referer_chain_7a3f}"
+      FLAG_IMDS: "AETH{imds_task_role_exfil_2f5a}"
+      FLAG_DOCKER: "AETH{docker_socket_pivot_8c11}"
+      FLAG_KUBELET: "AETH{kubelet_daemonset_pivot_4a6e}"
+      FLAG_ENVOY: "AETH{envoy_admin_spiffe_9c03}"
+      FLAG_CI: "AETH{buildkit_cache_poison_e5d9}"
+      FLAG_CONTAINERD: "AETH{containerd_shim_socket_0a4f}"
+      FLAG_AI: "AETH{agentic_tool_chain_c7b3}"
+      FLAG_PROMPT: "AETH{rag_tenant_leak_6f20}"
+      FLAG_XSLEAK: "AETH{xsleak_coupon_oracle_c2f7}"
+      FLAG_WEBHOOK_HMAC: "AETH{webhook_signature_bypass_5c3f}"
+      FLAG_S3: "AETH{s3_bucket_disclosure_c4a8}"
+      FLAG_K8S_SECRET: "AETH{kubelet_secret_exfil_9d72}"
+      FLAG_USER_DATA: "AETH{imds_userdata_sshkey_2a61}"
+      FLAG_CI_TOKEN: "AETH{ci_runner_token_leak_7f04}"
+      FLAG_REGISTRY: "AETH{registry_push_credential_5e93}"
+      FLAG_TERRAFORM: "AETH{terraform_state_secret_6d18}"
+      FLAG_ASSISTANT_TOOL: "AETH{assistant_tool_rce_3b7c}"
+      FLAG_HOST_POISON: "AETH{reset_host_injection_3f09}"
+    networks:
+      aetherion-net:
+        aliases:
+          - attack.aetherion.local
+          - cdn.aetherion.local
+    ports:
+      - "127.0.0.1:18081:8081"
+    restart: unless-stopped
+
+  edge:
+    build: ./edge
+    container_name: aetherion-edge
+    volumes:
+      - ./edge/site:/usr/share/nginx/html:ro
+    depends_on:
+      - api
+      - idp
+    networks:
+      aetherion-net:
+        aliases:
+          - aetherion.local
+          - app.aetherion.local
+    ports:
+      - "127.0.0.1:18080:8080"
+    restart: unless-stopped
+
+networks:
+  aetherion-net:
+    driver: bridge
+
+volumes:
+  aetherion-db:

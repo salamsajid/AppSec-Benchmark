@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" fill="none">
+  <defs>
+    <linearGradient id="tvFrame" x1="60" y1="60" x2="900" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8C5E1"/>
+      <stop offset=".3" stop-color="#505B73"/>
+      <stop offset=".65" stop-color="#7C89A5"/>
+      <stop offset="1" stop-color="#2A3142"/>
+    </linearGradient>
+    <linearGradient id="tvPanel" x1="110" y1="110" x2="850" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061020"/>
+      <stop offset=".42" stop-color="#112C55"/>
+      <stop offset=".7" stop-color="#281B5A"/>
+      <stop offset="1" stop-color="#050813"/>
+    </linearGradient>
+    <radialGradient id="tvSun" cx="0" cy="0" r="1" gradientTransform="translate(638 282) rotate(90) scale(168 240)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78D5FF" stop-opacity=".72"/>
+      <stop offset=".35" stop-color="#7C7CFF" stop-opacity=".27"/>
+      <stop offset="1" stop-color="#B36DFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tvStand" x1="480" y1="500" x2="480" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8C99B4"/>
+      <stop offset=".5" stop-color="#3D465A"/>
+      <stop offset="1" stop-color="#181D29"/>
+    </linearGradient>
+    <filter id="tvShadow" x="0" y="20" width="960" height="600" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="30" flood-color="#02040B" flood-opacity=".62"/>
+    </filter>
+    <clipPath id="tvClip"><rect x="88" y="84" width="784" height="396" rx="9"/></clipPath>
+  </defs>
+  <g filter="url(#tvShadow)">
+    <rect x="60" y="56" width="840" height="452" rx="20" fill="url(#tvFrame)"/>
+    <rect x="76" y="72" width="808" height="420" rx="10" fill="#070A12"/>
+    <rect x="88" y="84" width="784" height="396" rx="9" fill="url(#tvPanel)"/>
+    <g clip-path="url(#tvClip)">
+      <ellipse cx="638" cy="282" rx="250" ry="270" fill="url(#tvSun)"/>
+      <path d="M88 414C210 340 290 382 396 316C492 256 602 348 706 276C762 238 826 240 872 214V480H88V414Z" fill="#050A16" fill-opacity=".75"/>
+      <path d="M88 430C204 362 308 402 414 342C520 282 618 360 722 304C782 272 834 278 872 254" stroke="#89B9FF" stroke-opacity=".5" stroke-width="1.4"/>
+      <path d="M88 448C214 382 314 430 426 370C538 310 632 390 738 330C786 302 834 304 872 286" stroke="#D08CFF" stroke-opacity=".28"/>
+      <circle cx="638" cy="282" r="92" fill="none" stroke="#DCEBFF" stroke-opacity=".3" stroke-width="1.2"/>
+      <circle cx="638" cy="282" r="64" fill="none" stroke="#DCEBFF" stroke-opacity=".18"/>
+      <path d="M210 148H352" stroke="#DDE8FF" stroke-opacity=".4"/>
+      <path d="M210 164H296" stroke="#DDE8FF" stroke-opacity=".18"/>
+      <text x="210" y="196" fill="#F0F5FF" font-family="Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3.5" opacity=".85">LUMEN VISION / 8K</text>
+      <text x="210" y="228" fill="#C8D6F5" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="2" opacity=".45">8000 NITS · 240 HZ · MICRO-LED</text>
+    </g>
+    <path d="M76 72H884" stroke="#FFFFFF" stroke-opacity=".35"/>
+    <rect x="370" y="508" width="220" height="12" rx="6" fill="#20283A"/>
+    <path d="M430 520H530L554 560H406L430 520Z" fill="url(#tvStand)"/>
+    <rect x="352" y="560" width="256" height="13" rx="6.5" fill="url(#tvStand)"/>
+    <path d="M352 560H608" stroke="#E7EEFF" stroke-opacity=".28"/>
+    <circle cx="480" cy="486" r="2.5" fill="#74F0B8"/>
+  </g>
+</svg>

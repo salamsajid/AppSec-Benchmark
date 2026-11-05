@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "instance": "astralane-c5",
+  "guestMount": "/tmp/astralane-c5-src",
+  "artifactDir": "/tmp/astralane-c5-artifacts",
+  "chains": [
+    {
+      "id": 36,
+      "slug": "io-uring-pagecache",
+      "title": "io_uring fixed buffer page-cache overwrite",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "liburing", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 37,
+      "slug": "nftables-netfilter-race",
+      "title": "nf_tables transaction race to host kernel",
+      "namespace": "kernel",
+      "profile": "network-kernel",
+      "requires": ["headers", "nftables", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 38,
+      "slug": "openat2-mount-race",
+      "title": "openat2 RESOLVE_IN_ROOT mount race",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 39,
+      "slug": "cgroup-psi-uaf",
+      "title": "cgroupv2 PSI poll UAF",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "cgroup2", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 40,
+      "slug": "keyring-heap-spray",
+      "title": "Keyring quota heap spray into struct cred",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "keyutils", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 41,
+      "slug": "cilium-sockops-bypass",
+      "title": "Cilium sock_ops loopback policy bypass",
+      "namespace": "kernel",
+      "profile": "network-ebpf",
+      "requires": ["headers", "clang", "bpftool", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 42,
+      "slug": "envoy-wasm-memory",
+      "title": "Envoy proxy-wasm heap corruption / SDS key",
+      "namespace": "kernel",
+      "profile": "service-mesh",
+      "requires": ["envoy", "wasm", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 43,
+      "slug": "csi-targetpath-traversal",
+      "title": "CSI NodeStage TargetPath traversal",
+      "namespace": "kernel",
+      "profile": "container",
+      "requires": ["docker", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 44,
+      "slug": "buildkit-llb-injection",
+      "title": "BuildKit LLB proto injection via frontend",
+      "namespace": "kernel",
+      "profile": "container",
+      "requires": ["buildkit", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 45,
+      "slug": "oci-manifest-confusion",
+      "title": "OCI manifest mediaType confusion / tar-split",
+      "namespace": "kernel",
+      "profile": "container",
+      "requires": ["skopeo", "umoci", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 46,
+      "slug": "seccomp-user-notif-toctou",
+      "title": "SECCOMP_RET_USER_NOTIF pointer-swap TOCTOU",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "libseccomp", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 47,
+      "slug": "shm-sidecar-race",
+      "title": "/dev/shm sidecar ring-buffer race",
+      "namespace": "kernel",
+      "profile": "container",
+      "requires": ["docker", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 48,
+      "slug": "userfaultfd-stall",
+      "title": "userfaultfd/FUSE deterministic race stall",
+      "namespace": "kernel",
+      "profile": "kernel",
+      "requires": ["headers", "userfaultfd", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 49,
+      "slug": "gvisor-lisafs-confusion",
+      "title": "gVisor sentry/gofer LISAFS handle confusion",
+      "namespace": "kernel",
+      "profile": "secure-runtime",
+      "requires": ["runsc", "root"],
+      "status": "scaffold"
+    },
+    {
+      "id": 50,
+      "slug": "firecracker-vsock-spoof",
+      "title": "Firecracker/Kata vsock CID spoofing",
+      "namespace": "kernel",
+      "profile": "secure-runtime",
+      "requires": ["firecracker", "kvm", "nested-virt", "root"],
+      "status": "scaffold"
+    }
+  ]
+}

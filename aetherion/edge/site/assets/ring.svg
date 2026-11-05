@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" fill="none">
+  <defs>
+    <linearGradient id="ringCeramic" x1="150" y1="95" x2="470" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F2F6"/>
+      <stop offset=".18" stop-color="#9CA3AE"/>
+      <stop offset=".42" stop-color="#2A2F38"/>
+      <stop offset=".65" stop-color="#5F6672"/>
+      <stop offset=".86" stop-color="#D4D9E1"/>
+      <stop offset="1" stop-color="#303640"/>
+    </linearGradient>
+    <linearGradient id="ringInner" x1="215" y1="160" x2="405" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9C79E"/>
+      <stop offset=".24" stop-color="#7E5B39"/>
+      <stop offset=".5" stop-color="#F4D8AE"/>
+      <stop offset=".76" stop-color="#6B4A2C"/>
+      <stop offset="1" stop-color="#C79A68"/>
+    </linearGradient>
+    <radialGradient id="ringGlass" cx="0" cy="0" r="1" gradientTransform="translate(303 229) rotate(90) scale(128 75)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#75F3FF" stop-opacity=".38"/>
+      <stop offset=".45" stop-color="#8A6FFF" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#8A6FFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringHighlight" x1="180" y1="150" x2="376" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".8"/>
+      <stop offset=".45" stop-color="#FFFFFF" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ringShadow" x="40" y="20" width="540" height="430" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="ringBlur" x="130" y="340" width="360" height="100" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <ellipse cx="308" cy="378" rx="178" ry="20" fill="#01030A" fill-opacity=".7" filter="url(#ringBlur)"/>
+  <g filter="url(#ringShadow)">
+    <ellipse cx="310" cy="234" rx="188" ry="118" fill="url(#ringCeramic)"/>
+    <ellipse cx="310" cy="230" rx="188" ry="118" stroke="#F4F7FF" stroke-opacity=".28" stroke-width="1.6"/>
+    <ellipse cx="310" cy="234" rx="134" ry="74" fill="#0A0D13"/>
+    <ellipse cx="310" cy="234" rx="134" ry="74" stroke="url(#ringInner)" stroke-width="12"/>
+    <ellipse cx="310" cy="234" rx="120" ry="61" fill="#070A10"/>
+    <ellipse cx="310" cy="234" rx="120" ry="61" fill="url(#ringGlass)"/>
+    <ellipse cx="310" cy="234" rx="120" ry="61" stroke="#D9E0EC" stroke-opacity=".18"/>
+    <path d="M170 180C220 126 392 115 448 173C492 219 474 287 422 320" stroke="url(#ringHighlight)" stroke-width="2" fill="none"/>
+    <path d="M202 316C242 350 386 354 428 314" stroke="#05070B" stroke-opacity=".5" stroke-width="6" fill="none"/>
+    <g opacity=".9">
+      <circle cx="284" cy="232" r="6" fill="#A6F9FF"/>
+      <circle cx="284" cy="232" r="15" fill="#65F2FF" fill-opacity=".2"/>
+      <circle cx="310" cy="224" r="4" fill="#E8B985"/>
+      <circle cx="336" cy="232" r="4" fill="#7EA2FF"/>
+      <circle cx="310" cy="246" r="3" fill="#FF8AC7"/>
+    </g>
+    <path d="M160 196C174 151 214 124 262 120" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M380 340C424 320 458 280 466 236" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="2"/>
+    <path d="M224 160C260 140 354 138 398 162" stroke="#F1CEA2" stroke-opacity=".5" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,201 @@
+services:
+  iam:
+    build: ./services/iam
+    container_name: uvp-iam
+    environment:
+      - JWT_SECRET=secret
+      - JWT_WEAK_KEY=1
+      - OOB_URL=http://oob-collaborator:9000
+      - MAILHOG_HOST=mailhog
+      - MAILHOG_PORT=1025
+    volumes:
+      - iam-data:/tmp
+    networks:
+      - uvp-net
+    expose:
+      - "8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  catalog:
+    build: ./services/catalog
+    container_name: uvp-catalog
+    environment:
+      - PORT=3000
+      - MONGO_URL=mongodb://mongo:27017/catalog
+    depends_on:
+      - mongo
+    networks:
+      - uvp-net
+    expose:
+      - "3000"
+
+  mongo:
+    image: mongo:7-jammy
+    container_name: uvp-mongo
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - uvp-net
+    expose:
+      - "27017"
+
+  gateway:
+    build: ./gateway
+    container_name: uvp-gateway
+    depends_on:
+      - iam
+      - catalog
+      - lead
+      - serialization-lab
+      - smuggle-lab
+      - frontend
+      - spa
+      - ai-assistant
+      - oob-collaborator
+      - fleet-ops
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    networks:
+      - uvp-net
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: uvp-mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    networks:
+      - uvp-net
+
+  oob-collaborator:
+    build: ./services/oob-collaborator
+    container_name: uvp-oob
+    ports:
+      - "9000:9000"
+    networks:
+      - uvp-net
+
+  lead:
+    build: ./services/lead
+    container_name: uvp-lead
+    environment:
+      - OOB_URL=http://oob-collaborator:9000
+      - LEAD_DB=/tmp/lead.db
+    depends_on:
+      - mysql
+      - oob-collaborator
+    networks:
+      - uvp-net
+    expose:
+      - "5000"
+      - "5001"
+    ports:
+      - "5001:5001"
+
+  serialization-lab:
+    build: ./services/serialization-lab
+    container_name: uvp-serialization
+    environment:
+      - OOB_URL=http://oob-collaborator:9000
+    depends_on:
+      - oob-collaborator
+    networks:
+      - uvp-net
+    expose:
+      - "8000"
+
+  mysql:
+    image: mysql:8.0
+    container_name: uvp-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=labroot
+      - MYSQL_DATABASE=lead
+      - MYSQL_USER=lead
+      - MYSQL_PASSWORD=leadpass
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - uvp-net
+    expose:
+      - "3306"
+
+  smuggle-lab:
+    build: ./services/smuggle-lab
+    container_name: uvp-smuggle
+    environment:
+      - PORT=8081
+      - RAW_PORT=8082
+      - OOB_URL=http://oob-collaborator:9000
+    networks:
+      - uvp-net
+    expose:
+      - "8081"
+      - "8082"
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+
+  frontend:
+    build: ./services/frontend
+    container_name: uvp-frontend
+    environment:
+      - PORT=3001
+    networks:
+      - uvp-net
+    expose:
+      - "3001"
+
+  spa:
+    build: ./services/spa
+    container_name: uvp-spa
+    networks:
+      - uvp-net
+    expose:
+      - "80"
+
+  ai-assistant:
+    build: ./services/ai-assistant
+    container_name: uvp-ai
+    environment:
+      - PORT=6000
+      - OOB_URL=http://oob-collaborator:9000
+      - CATALOG_URL=http://catalog:3000
+      - MAILHOG_HOST=mailhog
+    depends_on:
+      - catalog
+      - oob-collaborator
+    networks:
+      - uvp-net
+    expose:
+      - "6000"
+
+  fleet-ops:
+    build: ./services/fleet-ops
+    container_name: uvp-fleet-ops
+    environment:
+      - PORT=7000
+      - DOCKER_SOCKET=/var/run/docker.sock
+      - HOST_SHARED_DIR=/host/shared
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./internal/host-sync:/host/shared:ro
+    cap_add:
+      - SYS_PTRACE
+      - DAC_OVERRIDE
+      - NET_RAW
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - uvp-net
+    expose:
+      - "7000"
+
+volumes:
+  iam-data:
+  mongo-data:
+  mysql-data:
+
+networks:
+  uvp-net:
+    driver: bridge

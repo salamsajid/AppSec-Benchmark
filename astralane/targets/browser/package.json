@@ -1,0 +1,11 @@
+{
+  "name": "astralane-browser-target",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "express": "4.21.2",
+    "playwright": "1.64.1",
+    "wabt": "1.0.39"
+  }
+}

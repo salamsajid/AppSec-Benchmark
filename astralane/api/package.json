@@ -1,0 +1,26 @@
+{
+  "name": "astralane-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.8.15",
+    "cookie-parser": "1.4.7",
+    "express": "4.21.2",
+    "graphql": "16.10.0",
+    "graphql-http": "1.23.1",
+    "ioredis": "5.4.2",
+    "pg": "8.13.1",
+    "pino": "9.6.0",
+    "pino-http": "10.4.0",
+    "xml-crypto": "6.4.0",
+    "zod": "3.24.1"
+  }
+}

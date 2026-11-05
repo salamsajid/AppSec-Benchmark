@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" fill="none">
+  <defs>
+    <linearGradient id="haloBand" x1="120" y1="80" x2="470" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF1F6"/>
+      <stop offset=".16" stop-color="#9CA4B1"/>
+      <stop offset=".4" stop-color="#303641"/>
+      <stop offset=".62" stop-color="#7A8391"/>
+      <stop offset=".82" stop-color="#D5DAE2"/>
+      <stop offset="1" stop-color="#3E4652"/>
+    </linearGradient>
+    <linearGradient id="haloCushion" x1="160" y1="120" x2="430" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#343B47"/>
+      <stop offset=".5" stop-color="#0C1018"/>
+      <stop offset="1" stop-color="#222831"/>
+    </linearGradient>
+    <linearGradient id="haloCupL" x1="80" y1="300" x2="255" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6EAF1"/>
+      <stop offset=".22" stop-color="#7D8592"/>
+      <stop offset=".5" stop-color="#252B35"/>
+      <stop offset=".78" stop-color="#939CAA"/>
+      <stop offset="1" stop-color="#303641"/>
+    </linearGradient>
+    <linearGradient id="haloCupR" x1="520" y1="300" x2="345" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CDD3DC"/>
+      <stop offset=".24" stop-color="#5D6572"/>
+      <stop offset=".55" stop-color="#1B2029"/>
+      <stop offset=".8" stop-color="#8B94A1"/>
+      <stop offset="1" stop-color="#2A3039"/>
+    </linearGradient>
+    <radialGradient id="haloPadL" cx="0" cy="0" r="1" gradientTransform="translate(172 365) rotate(90) scale(92 70)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A424F"/>
+      <stop offset=".5" stop-color="#10141C"/>
+      <stop offset="1" stop-color="#05070B"/>
+    </radialGradient>
+    <radialGradient id="haloPadR" cx="0" cy="0" r="1" gradientTransform="translate(428 365) rotate(90) scale(92 70)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#333A46"/>
+      <stop offset=".5" stop-color="#0D1118"/>
+      <stop offset="1" stop-color="#04060A"/>
+    </radialGradient>
+    <linearGradient id="haloGlow" x1="180" y1="315" x2="420" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BA8FF" stop-opacity=".45"/>
+      <stop offset=".5" stop-color="#B66CFF" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#61E9FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="haloShadow" x="20" y="20" width="560" height="640" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="haloBlur" x="100" y="585" width="400" height="90" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <ellipse cx="300" cy="618" rx="200" ry="22" fill="#01030A" fill-opacity=".72" filter="url(#haloBlur)"/>
+  <g filter="url(#haloShadow)">
+    <path d="M116 352C116 174 204 76 300 76C396 76 484 174 484 352" stroke="url(#haloBand)" stroke-width="34" stroke-linecap="round"/>
+    <path d="M132 342C132 186 212 100 300 100C388 100 468 186 468 342" stroke="url(#haloCushion)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M142 308C154 180 222 116 300 116C378 116 446 180 458 308" stroke="#F4F7FF" stroke-opacity=".25" stroke-width="2"/>
+    <path d="M116 338C116 318 130 304 150 304H180C200 304 214 318 214 338V402C214 422 200 436 180 436H150C130 436 116 422 116 402V338Z" fill="url(#haloCupL)"/>
+    <path d="M386 338C386 318 400 304 420 304H450C470 304 484 318 484 338V402C484 422 470 436 450 436H420C400 436 386 422 386 402V338Z" fill="url(#haloCupR)"/>
+    <ellipse cx="168" cy="370" rx="66" ry="82" fill="url(#haloPadL)"/>
+    <ellipse cx="432" cy="370" rx="66" ry="82" fill="url(#haloPadR)"/>
+    <ellipse cx="168" cy="370" rx="46" ry="64" fill="#090C12"/>
+    <ellipse cx="432" cy="370" rx="46" ry="64" fill="#070A10"/>
+    <ellipse cx="168" cy="370" rx="52" ry="70" stroke="#4C5563" stroke-opacity=".45"/>
+    <ellipse cx="432" cy="370" rx="52" ry="70" stroke="#4C5563" stroke-opacity=".4"/>
+    <ellipse cx="168" cy="370" rx="38" ry="55" fill="url(#haloGlow)" opacity=".55"/>
+    <ellipse cx="432" cy="370" rx="38" ry="55" fill="url(#haloGlow)" opacity=".55"/>
+    <path d="M138 330C144 316 154 308 168 306" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="2"/>
+    <path d="M408 330C414 316 424 308 438 306" stroke="#FFFFFF" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M150 410C176 424 196 426 214 414" stroke="#05070B" stroke-opacity=".65" stroke-width="3"/>
+    <path d="M386 414C404 426 424 424 450 410" stroke="#05070B" stroke-opacity=".65" stroke-width="3"/>
+    <rect x="212" y="338" width="12" height="42" rx="6" fill="#202630"/>
+    <rect x="376" y="338" width="12" height="42" rx="6" fill="#202630"/>
+    <path d="M222 352H376" stroke="#080B11" stroke-opacity=".5"/>
+    <circle cx="300" cy="92" r="4" fill="#E9EEF7" fill-opacity=".7"/>
+    <path d="M170 216C196 160 248 130 300 130" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="2"/>
+  </g>
+</svg>

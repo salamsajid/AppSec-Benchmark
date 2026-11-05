@@ -1,0 +1,23 @@
+# Packaged AI scanner images (the tool under test; exceed GitHub size limits)
+*-scanner-*.tar.gz
+*-scanner-*.zip
+*-images-*.tar.gz
+
+# Dependencies / build artifacts
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+
+# Local/runtime
+.env
+.env.*
+*.log
+tmp/
+.DS_Store
+
+# Planted flag/secret files (seeded at deploy, not committed)
+**/secret.txt

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" fill="none">
+  <defs>
+    <linearGradient id="budsCase" x1="160" y1="210" x2="500" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8EEFF"/>
+      <stop offset=".24" stop-color="#8E9DBD"/>
+      <stop offset=".55" stop-color="#3C455C"/>
+      <stop offset=".8" stop-color="#A1AECC"/>
+      <stop offset="1" stop-color="#4A546C"/>
+    </linearGradient>
+    <linearGradient id="budsLid" x1="210" y1="130" x2="460" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3F7FF"/>
+      <stop offset=".35" stop-color="#9AA9C8"/>
+      <stop offset=".7" stop-color="#4C566D"/>
+      <stop offset="1" stop-color="#C9D4EB"/>
+    </linearGradient>
+    <linearGradient id="budStem" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#CDD8EF"/>
+      <stop offset=".5" stop-color="#65718E"/>
+      <stop offset="1" stop-color="#EDF2FF"/>
+    </linearGradient>
+    <radialGradient id="budsGlow" cx="0" cy="0" r="1" gradientTransform="translate(320 300) rotate(90) scale(220 260)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#778EFF" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#63EFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="budsShadow" x="40" y="40" width="560" height="440" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#03050B" flood-opacity=".6"/>
+    </filter>
+  </defs>
+  <ellipse cx="320" cy="330" rx="250" ry="150" fill="url(#budsGlow)"/>
+  <g filter="url(#budsShadow)">
+    <path d="M180 290C180 258 206 232 238 232H402C434 232 460 258 460 290V378C460 410 434 436 402 436H238C206 436 180 410 180 378V290Z" fill="url(#budsCase)"/>
+    <path d="M194 298C194 276 212 258 234 258H406C428 258 446 276 446 298V366C446 394 424 416 396 416H244C216 416 194 394 194 366V298Z" fill="#101624" fill-opacity=".68"/>
+    <path d="M248 246H392" stroke="#F2F6FF" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="320" cy="404" r="4" fill="#74F0B8"/>
+    <circle cx="320" cy="404" r="9" stroke="#74F0B8" stroke-opacity=".3"/>
+
+    <g transform="rotate(-16 235 216)">
+      <path d="M222 178C222 151 244 129 271 129C298 129 320 151 320 178V250C320 272 302 290 280 290H262C240 290 222 272 222 250V178Z" fill="url(#budsLid)"/>
+      <ellipse cx="271" cy="181" rx="47" ry="50" fill="#111827"/>
+      <ellipse cx="271" cy="181" rx="33" ry="37" fill="#1C2740"/>
+      <ellipse cx="260" cy="168" rx="14" ry="18" fill="#6C7C9F" fill-opacity=".28"/>
+      <path d="M272 285V360C272 371 263 380 252 380H244C233 380 224 371 224 360V330" stroke="url(#budStem)" stroke-width="19" stroke-linecap="round"/>
+      <circle cx="252" cy="381" r="4" fill="#C6D2EB"/>
+    </g>
+
+    <g transform="rotate(16 405 216)">
+      <path d="M320 178C320 151 342 129 369 129C396 129 418 151 418 178V250C418 272 400 290 378 290H360C338 290 320 272 320 250V178Z" fill="url(#budsLid)"/>
+      <ellipse cx="369" cy="181" rx="47" ry="50" fill="#111827"/>
+      <ellipse cx="369" cy="181" rx="33" ry="37" fill="#1C2740"/>
+      <ellipse cx="358" cy="168" rx="14" ry="18" fill="#6C7C9F" fill-opacity=".28"/>
+      <path d="M370 285V360C370 371 379 380 390 380H398C409 380 418 371 418 360V330" stroke="url(#budStem)" stroke-width="19" stroke-linecap="round"/>
+      <circle cx="390" cy="381" r="4" fill="#C6D2EB"/>
+    </g>
+  </g>
+  <text x="320" y="476" text-anchor="middle" fill="#8E9DC2" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="4">PULSE BUDS PRO</text>
+</svg>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aetherion Support</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+      background: linear-gradient(160deg, #0b1224, #05070f 60%);
+      color: #e8edff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      display: flex; align-items: center; gap: 12px; padding: 18px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.08); background: rgba(12,18,34,.8);
+    }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: #63f0b0; box-shadow: 0 0 14px #63f0b0; }
+    header strong { font-size: 13px; letter-spacing: .16em; font-weight: 600; }
+    header span { margin-left: auto; font-size: 10px; letter-spacing: .12em; color: #7286b2; text-transform: uppercase; }
+    main { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 20px; overflow-y: auto; }
+    .msg { max-width: 82%; padding: 12px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; }
+    .agent { background: rgba(111,141,255,.12); border: 1px solid rgba(111,141,255,.22); border-bottom-left-radius: 5px; }
+    .agent b { display: block; font-size: 10px; letter-spacing: .14em; color: #9db4ff; margin-bottom: 5px; text-transform: uppercase; }
+    .member { align-self: flex-end; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.08); border-bottom-right-radius: 5px; color: #c9d4ee; }
+    .typing { display: inline-flex; gap: 4px; align-items: center; height: 14px; }
+    .typing i { width: 4px; height: 4px; border-radius: 50%; background: #8fa8ff; animation: pulse 1.2s infinite; }
+    .typing i:nth-child(2) { animation-delay: .15s; }
+    .typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes pulse { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+    footer { padding: 14px 16px 18px; border-top: 1px solid rgba(255,255,255,.08); display: flex; gap: 8px; }
+    input { flex: 1; border-radius: 11px; border: 1px solid rgba(255,255,255,.12); background: #0a1020; color: #eef2ff; padding: 11px 13px; font-size: 13px; outline: none; }
+    input:focus { border-color: rgba(111,141,255,.6); }
+    button { border: 0; border-radius: 11px; padding: 0 16px; background: linear-gradient(120deg, #819dff, #b18cff); color: #070b15; font-weight: 700; font-size: 12px; cursor: pointer; }
+    .status { padding: 0 20px 12px; font-size: 10px; letter-spacing: .12em; color: #5f7099; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <header><span class="dot"></span><strong>AETHERION CARE</strong><span>live channel</span></header>
+  <main id="stream">
+    <div class="msg agent"><b>Orion · Aether Care</b>Good evening. I can help with orders, Aether Care coverage and identity delivery. This window stays connected to your signed-in orbit.</div>
+  </main>
+  <div class="status" id="status">establishing secure channel</div>
+  <footer>
+    <input id="message" placeholder="Describe what drifted…" autocomplete="off">
+    <button id="send" type="button">Send</button>
+  </footer>
+  <script>
+    const stream = document.getElementById('stream');
+    const status = document.getElementById('status');
+    const input = document.getElementById('message');
+    const send = document.getElementById('send');
+
+    function append(text, kind) {
+      const node = document.createElement('div');
+      node.className = `msg ${kind}`;
+      node.textContent = text;
+      stream.appendChild(node);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    async function relayToken(target) {
+      try {
+        const response = await fetch('/api/widget/token', {
+          credentials: 'same-origin',
+          headers: { accept: 'application/json' },
+        });
+        if (!response.ok) return null;
+        const data = await response.json();
+        if (data && data.token) {
+          target.postMessage({ type: 'aetherion/token', token: data.token }, '*');
+          status.textContent = 'secure channel linked';
+          return data.token;
+        }
+      } catch (error) {}
+      return null;
+    }
+
+    window.addEventListener('message', async (event) => {
+      if (
+        !event.origin.includes('aetherion.local') &&
+        !event.origin.includes('127.0.0.1') &&
+        !event.origin.includes('localhost')
+      ) return;
+      const payload = event.data || {};
+      if (payload.type === 'aetherion/hello') {
+        await relayToken(event.source);
+        return;
+      }
+      if (payload.type === 'aetherion/message' && payload.text) {
+        append(String(payload.text).slice(0, 800), 'member');
+        status.textContent = 'agent is typing';
+        setTimeout(() => {
+          append('Understood. I have attached this conversation to your orbit so a specialist can continue without asking again.', 'agent');
+          status.textContent = 'secure channel linked';
+        }, 900);
+      }
+    });
+
+    function submitMessage() {
+      const value = input.value.trim();
+      if (!value) return;
+      append(value, 'member');
+      input.value = '';
+      status.textContent = 'agent is typing';
+      setTimeout(() => {
+        append('Received. I am checking the service graph for this device.', 'agent');
+        status.textContent = 'secure channel linked';
+      }, 800);
+    }
+
+    send.addEventListener('click', submitMessage);
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') submitMessage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" fill="none">
+  <defs>
+    <linearGradient id="studioFrame" x1="120" y1="50" x2="840" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F4F8"/>
+      <stop offset=".14" stop-color="#C4CAD5"/>
+      <stop offset=".36" stop-color="#5B6472"/>
+      <stop offset=".58" stop-color="#AAB1BE"/>
+      <stop offset=".8" stop-color="#4A525F"/>
+      <stop offset="1" stop-color="#262C35"/>
+    </linearGradient>
+    <linearGradient id="studioScreen" x1="150" y1="70" x2="810" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1428"/>
+      <stop offset=".5" stop-color="#070C18"/>
+      <stop offset="1" stop-color="#02040A"/>
+    </linearGradient>
+    <radialGradient id="studioAurora" cx="0" cy="0" r="1" gradientTransform="translate(500 290) rotate(90) scale(260 420)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7898FF" stop-opacity=".65"/>
+      <stop offset=".38" stop-color="#B164FF" stop-opacity=".28"/>
+      <stop offset=".7" stop-color="#4EDCF0" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#4EDCF0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="studioStand" x1="480" y1="500" x2="480" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#77808F"/>
+      <stop offset=".28" stop-color="#DDE2EA"/>
+      <stop offset=".62" stop-color="#666F7D"/>
+      <stop offset="1" stop-color="#2A3039"/>
+    </linearGradient>
+    <linearGradient id="studioBase" x1="320" y1="590" x2="640" y2="635" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A414C"/>
+      <stop offset=".35" stop-color="#D5DAE3"/>
+      <stop offset=".68" stop-color="#7C8593"/>
+      <stop offset="1" stop-color="#232830"/>
+    </linearGradient>
+    <linearGradient id="studioGlare" x1="170" y1="80" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset=".4" stop-color="#FFFFFF" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="studioUI" x1="220" y1="120" x2="740" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B7CCFF" stop-opacity=".75"/>
+      <stop offset=".5" stop-color="#9A75FF" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#66F6FF" stop-opacity=".18"/>
+    </linearGradient>
+    <filter id="studioShadow" x="0" y="0" width="960" height="660" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="32" flood-color="#01030A" flood-opacity=".65"/>
+    </filter>
+    <filter id="studioBlur" x="160" y="590" width="640" height="80" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <clipPath id="studioClip"><rect x="156" y="72" width="648" height="378" rx="14"/></clipPath>
+  </defs>
+  <ellipse cx="480" cy="620" rx="280" ry="22" fill="#01030A" fill-opacity=".72" filter="url(#studioBlur)"/>
+  <g filter="url(#studioShadow)">
+    <rect x="112" y="34" width="736" height="458" rx="28" fill="url(#studioFrame)"/>
+    <rect x="124" y="46" width="712" height="434" rx="22" fill="#080C14"/>
+    <rect x="156" y="72" width="648" height="378" rx="14" fill="url(#studioScreen)"/>
+    <g clip-path="url(#studioClip)">
+      <rect x="156" y="72" width="648" height="378" fill="url(#studioAurora)"/>
+      <path d="M160 420C250 300 320 366 394 250C464 140 560 208 644 104C692 44 754 52 806 10" stroke="url(#studioUI)" stroke-width="2" opacity=".6"/>
+      <path d="M156 458C270 342 360 390 442 286C522 186 612 236 704 132C748 82 782 96 818 62" stroke="#66F6FF" stroke-opacity=".24" stroke-width="1"/>
+      <circle cx="474" cy="260" r="114" stroke="#A5BAFF" stroke-opacity=".32"/>
+      <circle cx="474" cy="260" r="76" stroke="#E2E9FF" stroke-opacity=".2"/>
+      <ellipse cx="474" cy="260" rx="170" ry="58" stroke="#7BEFFF" stroke-opacity=".26" transform="rotate(-20 474 260)"/>
+      <ellipse cx="474" cy="260" rx="154" ry="52" stroke="#C896FF" stroke-opacity=".26" transform="rotate(34 474 260)"/>
+      <circle cx="474" cy="260" r="15" fill="#EAF0FF"/>
+      <circle cx="474" cy="260" r="38" fill="#AABFFF" fill-opacity=".14"/>
+      <rect x="190" y="104" width="126" height="76" rx="12" fill="#0A1122" fill-opacity=".8" stroke="#3B4A67"/>
+      <path d="M206 126H276M206 144H250M206 162H264" stroke="#91A7D4" stroke-opacity=".5"/>
+      <rect x="640" y="350" width="122" height="66" rx="12" fill="#0A1122" fill-opacity=".8" stroke="#3B4A67"/>
+      <path d="M658 372H712M658 388H700M658 404H684" stroke="#91A7D4" stroke-opacity=".4"/>
+      <text x="190" y="436" fill="#F2F5FF" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3.2" opacity=".78">HELIX STUDIO / 6K</text>
+      <rect x="156" y="72" width="648" height="378" fill="url(#studioGlare)"/>
+    </g>
+    <rect x="124" y="46" width="712" height="434" rx="22" stroke="#F7F9FF" stroke-opacity=".22"/>
+    <circle cx="480" cy="53" r="3.2" fill="#0B0F17" stroke="#566172"/>
+    <rect x="456" y="488" width="48" height="112" rx="20" fill="url(#studioStand)"/>
+    <path d="M320 600C380 580 580 580 640 600L620 632H340L320 600Z" fill="url(#studioBase)"/>
+    <path d="M322 600C404 588 556 588 638 600" stroke="#F4F7FF" stroke-opacity=".5"/>
+    <path d="M340 632H620" stroke="#0D1117" stroke-opacity=".5"/>
+    <path d="M200 92C208 70 226 56 248 50" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="848" y="232" width="6" height="90" rx="3" fill="#9AA3B1"/>
+    <rect x="848" y="342" width="6" height="44" rx="3" fill="#646D7B"/>
+  </g>
+</svg>

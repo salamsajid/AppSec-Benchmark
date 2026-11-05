@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="markGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#96B1FF"/>
+      <stop offset=".55" stop-color="#B98CFF"/>
+      <stop offset="1" stop-color="#62F0FF"/>
+    </linearGradient>
+    <radialGradient id="markCore" cx="0" cy="0" r="1" gradientTransform="translate(32 32) rotate(90) scale(12)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#AFC6FF"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#080D1A"/>
+  <circle cx="32" cy="32" r="22" stroke="url(#markGrad)" stroke-opacity=".75" stroke-width="1.2"/>
+  <ellipse cx="32" cy="32" rx="22" ry="8.5" stroke="url(#markGrad)" stroke-width="1.2" transform="rotate(-28 32 32)" opacity=".85"/>
+  <ellipse cx="32" cy="32" rx="22" ry="8.5" stroke="url(#markGrad)" stroke-width="1.2" transform="rotate(42 32 32)" opacity=".5"/>
+  <circle cx="32" cy="32" r="4.4" fill="url(#markCore)"/>
+  <circle cx="32" cy="32" r="9" stroke="#9CB6FF" stroke-opacity=".25"/>
+</svg>

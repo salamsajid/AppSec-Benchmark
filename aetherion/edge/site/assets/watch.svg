@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580" fill="none">
+  <defs>
+    <linearGradient id="bandTop" x1="150" y1="20" x2="300" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4D566D"/>
+      <stop offset=".5" stop-color="#1B2130"/>
+      <stop offset="1" stop-color="#414A60"/>
+    </linearGradient>
+    <linearGradient id="bandBottom" x1="150" y1="560" x2="300" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4D566D"/>
+      <stop offset=".5" stop-color="#1B2130"/>
+      <stop offset="1" stop-color="#414A60"/>
+    </linearGradient>
+    <linearGradient id="watchCase" x1="110" y1="170" x2="340" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/>
+      <stop offset=".28" stop-color="#A9B5D0"/>
+      <stop offset=".55" stop-color="#4B556C"/>
+      <stop offset=".82" stop-color="#C3CDE3"/>
+      <stop offset="1" stop-color="#616C84"/>
+    </linearGradient>
+    <radialGradient id="watchFace" cx="0" cy="0" r="1" gradientTransform="translate(224 286) rotate(90) scale(116)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18264E"/>
+      <stop offset=".7" stop-color="#080D1B"/>
+      <stop offset="1" stop-color="#04060C"/>
+    </radialGradient>
+    <radialGradient id="watchGlow" cx="0" cy="0" r="1" gradientTransform="translate(224 286) rotate(90) scale(120)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6996FF" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#9A6CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="watchShadow" x="20" y="20" width="400" height="540" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#02040A" flood-opacity=".68"/>
+    </filter>
+  </defs>
+  <g filter="url(#watchShadow)">
+    <path d="M156 38C156 25 167 14 180 14H260C273 14 284 25 284 38L300 178H140L156 38Z" fill="url(#bandTop)"/>
+    <path d="M140 402H300L284 542C284 555 273 566 260 566H180C167 566 156 555 156 542L140 402Z" fill="url(#bandBottom)"/>
+    <path d="M158 58H282M158 82H282M158 106H282" stroke="#77819A" stroke-opacity=".16"/>
+    <path d="M158 498H282M158 522H282" stroke="#77819A" stroke-opacity=".16"/>
+    <rect x="112" y="172" width="216" height="236" rx="66" fill="url(#watchCase)"/>
+    <rect x="124" y="184" width="192" height="212" rx="56" fill="#070A12"/>
+    <circle cx="220" cy="290" r="96" fill="url(#watchFace)"/>
+    <circle cx="220" cy="290" r="96" fill="url(#watchGlow)"/>
+    <circle cx="220" cy="290" r="96" stroke="#7C8FB9" stroke-opacity=".32"/>
+    <path d="M220 194V208M220 372V386M124 290H138M302 290H316" stroke="#B5C4E5" stroke-opacity=".5" stroke-width="1.4"/>
+    <path d="M220 290L220 236" stroke="#DFE8FF" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M220 290L266 318" stroke="#8BA4FF" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="220" cy="290" r="4" fill="#EAF1FF"/>
+    <text x="220" y="336" text-anchor="middle" fill="#EAF0FF" font-family="Helvetica, Arial, sans-serif" font-size="31" font-weight="300">18:42</text>
+    <text x="220" y="356" text-anchor="middle" fill="#8597BE" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="2.5">READINESS 86</text>
+    <circle cx="220" cy="374" r="3" fill="#6CF3B4"/>
+    <rect x="334" y="246" width="11" height="48" rx="5.5" fill="#8C99B5"/>
+    <rect x="334" y="308" width="11" height="28" rx="5.5" fill="#6F7A93"/>
+    <path d="M132 216C144 198 166 188 190 188" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2"/>
+  </g>
+  <text x="220" y="580" text-anchor="middle" fill="#8E9DC2" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="4">ORBIT WATCH S3</text>
+</svg>

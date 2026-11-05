@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" fill="none">
+  <defs>
+    <linearGradient id="arcShell" x1="130" y1="100" x2="690" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F6F8"/>
+      <stop offset=".18" stop-color="#C6CBD3"/>
+      <stop offset=".4" stop-color="#7C8592"/>
+      <stop offset=".6" stop-color="#DCE0E7"/>
+      <stop offset=".78" stop-color="#6B7481"/>
+      <stop offset="1" stop-color="#2E343D"/>
+    </linearGradient>
+    <linearGradient id="arcGrip" x1="150" y1="250" x2="260" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B7BEC8"/>
+      <stop offset=".45" stop-color="#303640"/>
+      <stop offset="1" stop-color="#0C1016"/>
+    </linearGradient>
+    <linearGradient id="arcGripR" x1="670" y1="250" x2="560" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AEB6C2"/>
+      <stop offset=".48" stop-color="#2A3039"/>
+      <stop offset="1" stop-color="#090C11"/>
+    </linearGradient>
+    <linearGradient id="arcCenter" x1="260" y1="120" x2="560" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#222933"/>
+      <stop offset=".5" stop-color="#080B11"/>
+      <stop offset="1" stop-color="#3A424F"/>
+    </linearGradient>
+    <radialGradient id="arcStick" cx="0" cy="0" r="1" gradientTransform="translate(290 258) rotate(90) scale(44)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A525F"/>
+      <stop offset=".55" stop-color="#11151C"/>
+      <stop offset="1" stop-color="#020306"/>
+    </radialGradient>
+    <radialGradient id="arcStickR" cx="0" cy="0" r="1" gradientTransform="translate(530 258) rotate(90) scale(44)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#454D59"/>
+      <stop offset=".55" stop-color="#0E1218"/>
+      <stop offset="1" stop-color="#020306"/>
+    </radialGradient>
+    <radialGradient id="arcAccent" cx="0" cy="0" r="1" gradientTransform="translate(410 180) rotate(90) scale(280 120)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8D6DFF" stop-opacity=".34"/>
+      <stop offset=".5" stop-color="#65E8FF" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#65E8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arcGlint" x1="180" y1="120" x2="500" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".58"/>
+      <stop offset=".45" stop-color="#FFFFFF" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="arcShadow" x="20" y="20" width="780" height="460" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="26" stdDeviation="28" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="arcBlur" x="100" y="390" width="620" height="90" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <ellipse cx="410" cy="420" rx="290" ry="22" fill="#01030A" fill-opacity=".7" filter="url(#arcBlur)"/>
+  <g filter="url(#arcShadow)">
+    <path d="M170 262C170 172 232 110 306 98C360 90 460 90 514 98C588 110 650 172 650 262C650 330 606 390 566 410C532 427 498 402 478 372C454 336 366 336 342 372C322 402 288 427 254 410C214 390 170 330 170 262Z" fill="url(#arcShell)"/>
+    <path d="M170 262C170 172 232 110 306 98C360 90 460 90 514 98C588 110 650 172 650 262" fill="url(#arcAccent)"/>
+    <path d="M210 300C210 238 256 190 320 178C368 170 452 170 500 178C564 190 610 238 610 300C610 350 580 388 548 400C526 408 500 386 484 362C456 320 364 320 336 362C320 386 294 408 272 400C240 388 210 350 210 300Z" fill="url(#arcCenter)"/>
+    <path d="M180 272C180 190 240 128 312 112" stroke="#FFFFFF" stroke-opacity=".48" stroke-width="3"/>
+    <path d="M300 106C362 96 458 96 520 106" stroke="#FFFFFF" stroke-opacity=".32" stroke-width="2"/>
+    <path d="M165 288C170 360 214 414 260 424C284 430 306 412 322 386" stroke="url(#arcGrip)" stroke-width="34" stroke-linecap="round"/>
+    <path d="M655 288C650 360 606 414 560 424C536 430 514 412 498 386" stroke="url(#arcGripR)" stroke-width="34" stroke-linecap="round"/>
+    <circle cx="290" cy="258" r="54" fill="#05070C"/>
+    <circle cx="290" cy="258" r="46" fill="url(#arcStick)"/>
+    <circle cx="290" cy="258" r="32" fill="url(#arcStick)" stroke="#9AA3B0" stroke-opacity=".3"/>
+    <circle cx="290" cy="258" r="22" fill="#0A0E15" stroke="#626C7A"/>
+    <circle cx="530" cy="258" r="54" fill="#05070C"/>
+    <circle cx="530" cy="258" r="46" fill="url(#arcStickR)"/>
+    <circle cx="530" cy="258" r="32" fill="url(#arcStickR)" stroke="#9AA3B0" stroke-opacity=".3"/>
+    <circle cx="530" cy="258" r="22" fill="#0A0E15" stroke="#626C7A"/>
+    <circle cx="365" cy="220" r="13" fill="#0C1017" stroke="#7A8492"/>
+    <circle cx="365" cy="220" r="5" fill="#8A96A8"/>
+    <circle cx="410" cy="198" r="13" fill="#0C1017" stroke="#7A8492"/>
+    <circle cx="455" cy="220" r="13" fill="#0C1017" stroke="#7A8492"/>
+    <circle cx="410" cy="242" r="13" fill="#0C1017" stroke="#7A8492"/>
+    <circle cx="410" cy="220" r="5" fill="#6EEBFF"/>
+    <circle cx="455" cy="220" r="5" fill="#B48CFF"/>
+    <circle cx="365" cy="220" r="5" fill="#FFC58E"/>
+    <path d="M600 200L620 188M600 218L620 206M220 188L200 176" stroke="#0B0F15" stroke-opacity=".5" stroke-width="3"/>
+    <path d="M300 380C356 398 464 398 520 380" stroke="#05070B" stroke-opacity=".28" stroke-width="3"/>
+    <path d="M236 160C270 132 334 118 410 118" stroke="url(#arcGlint)" stroke-width="3"/>
+    <circle cx="410" cy="144" r="4" fill="#8DF1FF"/>
+    <circle cx="410" cy="144" r="12" fill="#8DF1FF" fill-opacity=".12"/>
+  </g>
+</svg>

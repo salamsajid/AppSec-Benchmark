@@ -1,0 +1,16 @@
+{
+  "name": "aetherion-idp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aetherion identity provider (benchmark build)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cookie-parser": "1.4.7",
+    "express": "4.21.2",
+    "jsonwebtoken": "9.0.2",
+    "pg": "8.13.1"
+  }
+}

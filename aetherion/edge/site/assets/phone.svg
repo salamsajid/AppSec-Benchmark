@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 660" fill="none">
+  <defs>
+    <linearGradient id="phoneScreen" x1="150" y1="90" x2="360" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18234B"/>
+      <stop offset=".45" stop-color="#0B1026"/>
+      <stop offset="1" stop-color="#070A17"/>
+    </linearGradient>
+    <linearGradient id="phoneFrame" x1="90" y1="40" x2="390" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDE6FF"/>
+      <stop offset=".22" stop-color="#6E7B9C"/>
+      <stop offset=".48" stop-color="#2B3247"/>
+      <stop offset=".76" stop-color="#8E9AB8"/>
+      <stop offset="1" stop-color="#384157"/>
+    </linearGradient>
+    <linearGradient id="phoneGlow" x1="160" y1="110" x2="320" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6F8DFF" stop-opacity=".6"/>
+      <stop offset=".55" stop-color="#B46DFF" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#5EF2FF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="phoneOrb" cx="0" cy="0" r="1" gradientTransform="translate(242 305) rotate(52) scale(188 250)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DACFF" stop-opacity=".8"/>
+      <stop offset=".5" stop-color="#7C63FF" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#55EEFF" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="phoneClip"><rect x="112" y="62" width="256" height="536" rx="42"/></clipPath>
+    <filter id="phoneShadow" x="20" y="10" width="440" height="650" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#02040B" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <g filter="url(#phoneShadow)">
+    <rect x="90" y="40" width="300" height="580" rx="58" fill="url(#phoneFrame)"/>
+    <rect x="100" y="50" width="280" height="560" rx="50" fill="#090D19"/>
+    <rect x="112" y="62" width="256" height="536" rx="42" fill="url(#phoneScreen)"/>
+    <g clip-path="url(#phoneClip)">
+      <circle cx="242" cy="330" r="210" fill="url(#phoneOrb)"/>
+      <path d="M60 530C126 419 198 470 252 388C303 310 363 331 436 238" stroke="url(#phoneGlow)" stroke-width="1.4" opacity=".6"/>
+      <path d="M80 578C146 476 224 530 288 438C339 365 392 388 470 292" stroke="url(#phoneGlow)" stroke-width="1" opacity=".35"/>
+      <ellipse cx="240" cy="352" rx="138" ry="52" stroke="#B9C8FF" stroke-opacity=".38" stroke-width="1.1" transform="rotate(-24 240 352)"/>
+      <ellipse cx="240" cy="352" rx="148" ry="56" stroke="#91F1FF" stroke-opacity=".16" stroke-width="1" transform="rotate(38 240 352)"/>
+      <circle cx="240" cy="352" r="17" fill="#D9E5FF"/>
+      <circle cx="240" cy="352" r="34" fill="#93ACFF" fill-opacity=".13"/>
+      <rect x="178" y="88" width="124" height="98" rx="28" fill="#070A13" stroke="#2E3853" stroke-width="1.2"/>
+      <circle cx="216" cy="124" r="17" fill="#0C1324" stroke="#57658C" stroke-width="1.2"/>
+      <circle cx="216" cy="124" r="7" fill="#172C5A"/>
+      <circle cx="265" cy="152" r="14" fill="#0C1324" stroke="#57658C" stroke-width="1.2"/>
+      <circle cx="265" cy="152" r="5.5" fill="#152346"/>
+      <circle cx="265" cy="124" r="4.5" fill="#E8F0FF" fill-opacity=".8"/>
+      <text x="158" y="560" fill="#EAF0FF" font-family="Helvetica, Arial, sans-serif" font-size="27" font-weight="600" opacity=".85">Nova X1</text>
+      <text x="158" y="582" fill="#8CA0CC" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="3" opacity=".8">AETHER A1</text>
+      <rect x="198" y="50" width="84" height="21" rx="10.5" fill="#05070E"/>
+      <rect x="218" y="57" width="44" height="6" rx="3" fill="#1C2438"/>
+    </g>
+    <rect x="90.5" y="40.5" width="299" height="579" rx="57.5" stroke="#F1F5FF" stroke-opacity=".28"/>
+    <path d="M91 162C91 138 96 114 109 98" stroke="#F4F7FF" stroke-opacity=".55" stroke-width="2"/>
+    <rect x="384" y="196" width="5" height="88" rx="2.5" fill="#707D9C"/>
+    <rect x="384" y="300" width="5" height="52" rx="2.5" fill="#59637E"/>
+  </g>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" fill="none">
+  <defs>
+    <linearGradient id="deckShell" x1="100" y1="120" x2="740" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F2F6"/>
+      <stop offset=".16" stop-color="#AEB5C0"/>
+      <stop offset=".38" stop-color="#4E5763"/>
+      <stop offset=".58" stop-color="#B8BFC9"/>
+      <stop offset=".8" stop-color="#3B424D"/>
+      <stop offset="1" stop-color="#1A1E25"/>
+    </linearGradient>
+    <linearGradient id="deckLeft" x1="110" y1="160" x2="300" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D333D"/>
+      <stop offset=".5" stop-color="#0B0E14"/>
+      <stop offset="1" stop-color="#3E4652"/>
+    </linearGradient>
+    <linearGradient id="deckRight" x1="730" y1="160" x2="540" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#262C35"/>
+      <stop offset=".5" stop-color="#090C11"/>
+      <stop offset="1" stop-color="#3A424D"/>
+    </linearGradient>
+    <linearGradient id="deckScreen" x1="270" y1="130" x2="570" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101C3D"/>
+      <stop offset=".45" stop-color="#070B18"/>
+      <stop offset="1" stop-color="#02040A"/>
+    </linearGradient>
+    <radialGradient id="deckAurora" cx="0" cy="0" r="1" gradientTransform="translate(420 270) rotate(90) scale(190 230)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E9EFF" stop-opacity=".68"/>
+      <stop offset=".4" stop-color="#B165FF" stop-opacity=".25"/>
+      <stop offset=".72" stop-color="#4DEBFF" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#4DEBFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="deckStick" cx="0" cy="0" r="1" gradientTransform="translate(200 300) rotate(90) scale(42)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#505866"/>
+      <stop offset=".55" stop-color="#10141B"/>
+      <stop offset="1" stop-color="#020306"/>
+    </radialGradient>
+    <radialGradient id="deckStickR" cx="0" cy="0" r="1" gradientTransform="translate(640 300) rotate(90) scale(42)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4C5461"/>
+      <stop offset=".55" stop-color="#0E1218"/>
+      <stop offset="1" stop-color="#020306"/>
+    </radialGradient>
+    <linearGradient id="deckGlare" x1="280" y1="140" x2="530" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".19"/>
+      <stop offset=".42" stop-color="#FFFFFF" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="deckShadow" x="20" y="20" width="800" height="500" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#01030A" flood-opacity=".72"/>
+    </filter>
+    <filter id="deckBlur" x="100" y="430" width="640" height="90" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <clipPath id="deckClip"><rect x="280" y="132" width="280" height="256" rx="18"/></clipPath>
+  </defs>
+  <ellipse cx="420" cy="462" rx="300" ry="22" fill="#01030A" fill-opacity=".7" filter="url(#deckBlur)"/>
+  <g filter="url(#deckShadow)">
+    <path d="M122 250C122 172 180 118 256 116H584C660 118 718 172 718 250V316C718 392 662 444 586 446H254C178 444 122 392 122 316V250Z" fill="url(#deckShell)"/>
+    <path d="M136 252C136 186 186 140 254 138H280V424H254C186 422 136 376 136 310V252Z" fill="url(#deckLeft)"/>
+    <path d="M704 252C704 186 654 140 586 138H560V424H586C654 422 704 376 704 310V252Z" fill="url(#deckRight)"/>
+    <rect x="268" y="120" width="304" height="280" rx="24" fill="#05070D"/>
+    <rect x="280" y="132" width="280" height="256" rx="18" fill="url(#deckScreen)"/>
+    <g clip-path="url(#deckClip)">
+      <circle cx="420" cy="290" r="240" fill="url(#deckAurora)"/>
+      <path d="M270 350C320 280 360 306 402 246C438 196 474 214 520 166" stroke="#7CEBFF" stroke-opacity=".4" stroke-width="1.5"/>
+      <path d="M270 376C330 304 372 334 416 274C454 222 492 238 542 186" stroke="#D18CFF" stroke-opacity=".24" stroke-width="1"/>
+      <ellipse cx="420" cy="286" rx="108" ry="39" stroke="#DDE8FF" stroke-opacity=".36" transform="rotate(-22 420 286)"/>
+      <ellipse cx="420" cy="286" rx="120" ry="44" stroke="#7CF1FF" stroke-opacity=".18" transform="rotate(36 420 286)"/>
+      <circle cx="420" cy="286" r="15" fill="#ECF2FF"/>
+      <circle cx="420" cy="286" r="36" fill="#A8BBFF" fill-opacity=".14"/>
+      <rect x="300" y="154" width="88" height="58" rx="12" fill="#0A1122" fill-opacity=".74" stroke="#30405E"/>
+      <path d="M314 172H372M314 186H352M314 200H364" stroke="#8FA5D3" stroke-opacity=".44"/>
+      <rect x="470" y="320" width="70" height="46" rx="10" fill="#0A1122" fill-opacity=".72" stroke="#30405E"/>
+      <path d="M484 338H526M484 352H512" stroke="#8FA5D3" stroke-opacity=".4"/>
+      <rect x="280" y="132" width="280" height="256" fill="url(#deckGlare)"/>
+    </g>
+    <circle cx="200" cy="296" r="57" fill="#05070C"/>
+    <circle cx="200" cy="296" r="47" fill="url(#deckStick)"/>
+    <circle cx="200" cy="296" r="32" fill="url(#deckStick)" stroke="#9CA6B4" stroke-opacity=".3"/>
+    <circle cx="200" cy="296" r="22" fill="#0A0E15" stroke="#65707E"/>
+    <circle cx="640" cy="296" r="57" fill="#05070C"/>
+    <circle cx="640" cy="296" r="47" fill="url(#deckStickR)"/>
+    <circle cx="640" cy="296" r="32" fill="url(#deckStickR)" stroke="#9CA6B4" stroke-opacity=".3"/>
+    <circle cx="640" cy="296" r="22" fill="#0A0E15" stroke="#65707E"/>
+    <circle cx="640" cy="198" r="12" fill="#0B0F15" stroke="#6D7785"/>
+    <circle cx="668" cy="220" r="12" fill="#0B0F15" stroke="#6D7785"/>
+    <circle cx="668" cy="248" r="12" fill="#0B0F15" stroke="#6D7785"/>
+    <circle cx="640" cy="270" r="12" fill="#0B0F15" stroke="#6D7785"/>
+    <circle cx="668" cy="220" r="4.5" fill="#73EFFF"/>
+    <circle cx="640" cy="198" r="4.5" fill="#B68CFF"/>
+    <circle cx="668" cy="248" r="4.5" fill="#FFC38F"/>
+    <path d="M172 236C176 200 194 172 222 156" stroke="#FFFFFF" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M668 236C664 200 646 172 618 156" stroke="#FFFFFF" stroke-opacity=".24" stroke-width="2"/>
+    <path d="M158 380C170 408 192 424 222 430" stroke="#05070B" stroke-opacity=".4" stroke-width="3"/>
+    <path d="M682 380C670 408 648 424 618 430" stroke="#05070B" stroke-opacity=".4" stroke-width="3"/>
+    <path d="M300 114C350 106 490 106 540 114" stroke="#FFFFFF" stroke-opacity=".38" stroke-width="2"/>
+  </g>
+</svg>

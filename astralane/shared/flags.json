@@ -1,0 +1,406 @@
+{
+  "name": "AstraLane",
+  "flag_prefix": "ASTRA",
+  "chains": [
+    {
+      "id": 1,
+      "slug": "ecdsa-biased-nonce",
+      "category": "C1",
+      "tier": "app",
+      "title": "ECDSA biased nonce / lattice key recovery",
+      "flag": "ASTRA{ecdsa_biased_nonce_admin_6f2a}"
+    },
+    {
+      "id": 2,
+      "slug": "http2-timing-hmac",
+      "category": "C1",
+      "tier": "app",
+      "title": "HTTP/2 timeless timing against partner secret check",
+      "flag": "ASTRA{http2_timing_hmac_secret_9d41}"
+    },
+    {
+      "id": 3,
+      "slug": "dpop-jkt-replay",
+      "category": "C1",
+      "tier": "real",
+      "title": "DPoP thumbprint canonicalization differential + replay",
+      "flag": "ASTRA{dpop_jkt_replay_4f01}"
+    },
+    {
+      "id": 4,
+      "slug": "webauthn-cbor-duplicate",
+      "category": "C1",
+      "tier": "real",
+      "title": "WebAuthn CBOR duplicate-key parser differential",
+      "flag": "ASTRA{webauthn_cbor_duplicate_7b22}"
+    },
+    {
+      "id": 5,
+      "slug": "oidc-logout-xsleak",
+      "category": "C1",
+      "tier": "real",
+      "title": "OIDC front-channel logout XS-Leak + worker cache",
+      "flag": "ASTRA{oidc_logout_xsleak_1c93}"
+    },
+    {
+      "id": 6,
+      "slug": "saml-xsw-schema",
+      "category": "C1",
+      "tier": "app",
+      "title": "SAML xml:id schema pollution / XSW",
+      "flag": "ASTRA{saml_xsw_admin_3b7c}"
+    },
+    {
+      "id": 7,
+      "slug": "graphql-cursor-padding",
+      "category": "C1",
+      "tier": "app",
+      "title": "Blind CBC padding oracle in GraphQL cursors",
+      "flag": "ASTRA{graphql_cursor_padding_8e15}"
+    },
+    {
+      "id": 8,
+      "slug": "zk-underconstrained",
+      "category": "C1",
+      "tier": "real",
+      "title": "zk-SNARK under-constrained witness forgery",
+      "flag": "ASTRA{zk_underconstrained_witness_2d66}"
+    },
+    {
+      "id": 9,
+      "slug": "qpack-desync",
+      "category": "C2",
+      "tier": "real",
+      "title": "HTTP/3 QPACK dynamic-table desynchronization",
+      "flag": "ASTRA{qpack_desync_header_5e17}"
+    },
+    {
+      "id": 10,
+      "slug": "connect-tunnel-smuggle",
+      "category": "C2",
+      "tier": "real",
+      "title": "HTTP/2 CONNECT tunnel + WebSocket downgrade",
+      "flag": "ASTRA{connect_tunnel_mesh_a8f2}"
+    },
+    {
+      "id": 11,
+      "slug": "charset-tri-parser",
+      "category": "C2",
+      "tier": "real",
+      "title": "IBM037 / UTF-16BE / UTF-7 tri-parser differential",
+      "flag": "ASTRA{charset_ebcdic_spel_c04b}"
+    },
+    {
+      "id": 12,
+      "slug": "chunked-trailer-smuggle",
+      "category": "C2",
+      "tier": "real",
+      "title": "Chunked trailer header smuggling",
+      "flag": "ASTRA{chunked_trailer_smuggle_9a3e}"
+    },
+    {
+      "id": 13,
+      "slug": "esi-range-poison",
+      "category": "C2",
+      "tier": "real",
+      "title": "ESI + range-request fragment cache poisoning",
+      "flag": "ASTRA{esi_range_cache_6d58}"
+    },
+    {
+      "id": 14,
+      "slug": "grpc-trailer-spoof",
+      "category": "C2",
+      "tier": "real",
+      "title": "gRPC trailer-only status spoofing",
+      "flag": "ASTRA{grpc_trailer_status_b1f0}"
+    },
+    {
+      "id": 15,
+      "slug": "multipart-boundary-s3",
+      "category": "C2",
+      "tier": "real",
+      "title": "Multipart boundary quote-escaping vs S3 policy",
+      "flag": "ASTRA{multipart_boundary_s3_7c44}"
+    },
+    {
+      "id": 16,
+      "slug": "webtransport-datagram",
+      "category": "C2",
+      "tier": "real",
+      "title": "WebTransport capsule origin/stream confusion",
+      "flag": "ASTRA{webtransport_datagram_e93a}"
+    },
+    {
+      "id": 17,
+      "slug": "rsc-flight-closure",
+      "category": "C3",
+      "tier": "real",
+      "title": "RSC Flight reference-cycle closure invocation",
+      "flag": "ASTRA{rsc_flight_closure_4a8d}"
+    },
+    {
+      "id": 18,
+      "slug": "wasm-heap-overflow",
+      "category": "C3",
+      "tier": "real",
+      "title": "WASM linear-memory overflow to DOM XSS",
+      "flag": "ASTRA{wasm_linear_heap_xss_4a19}"
+    },
+    {
+      "id": 19,
+      "slug": "speculation-cspt",
+      "category": "C3",
+      "tier": "real",
+      "title": "Speculation Rules prerender + client-side path traversal",
+      "flag": "ASTRA{speculation_cspt_8b73}"
+    },
+    {
+      "id": 20,
+      "slug": "importmap-clobber",
+      "category": "C3",
+      "tier": "real",
+      "title": "Import-map clobbering + bare specifier hijack",
+      "flag": "ASTRA{importmap_clobber_2e50}"
+    },
+    {
+      "id": 21,
+      "slug": "turn-loopback-ssrf",
+      "category": "C3",
+      "tier": "real",
+      "title": "WebRTC TURN credentials to loopback pivot",
+      "flag": "ASTRA{turn_loopback_pivot_c7a1}"
+    },
+    {
+      "id": 22,
+      "slug": "shadowdom-keylogger",
+      "category": "C3",
+      "tier": "real",
+      "title": "Declarative Shadow DOM slot hijack + CSS keylogger",
+      "flag": "ASTRA{shadowdom_css_keylogger_5b38}"
+    },
+    {
+      "id": 23,
+      "slug": "sharedstorage-windowname",
+      "category": "C3",
+      "tier": "real",
+      "title": "SharedStorage / window.name auth-origin race",
+      "flag": "ASTRA{sharedstorage_windowname_1d9e}"
+    },
+    {
+      "id": 24,
+      "slug": "redos-auth-failopen",
+      "category": "C3",
+      "tier": "app",
+      "title": "ReDoS event-loop starvation + auth fail-open",
+      "flag": "ASTRA{redos_failopen_payout_2c90}"
+    },
+    {
+      "id": 25,
+      "slug": "wasi-fd-confusion",
+      "category": "C4",
+      "tier": "real",
+      "title": "WASI host-import FD table confusion",
+      "flag": "ASTRA{wasi_fd_confusion_6a07}"
+    },
+    {
+      "id": 26,
+      "slug": "python-format-sandbox",
+      "category": "C4",
+      "tier": "real",
+      "title": "Python format-string attribute traversal",
+      "flag": "ASTRA{python_format_sandbox_d3b8}"
+    },
+    {
+      "id": 27,
+      "slug": "java-threadlocal-leak",
+      "category": "C4",
+      "tier": "real",
+      "title": "Java virtual-thread ThreadLocal context leak",
+      "flag": "ASTRA{java_threadlocal_leak_9f61}"
+    },
+    {
+      "id": 28,
+      "slug": "go-context-socket-reuse",
+      "category": "C4",
+      "tier": "real",
+      "title": "Go context cancellation dirty socket reuse",
+      "flag": "ASTRA{go_context_socket_reuse_4e2c}"
+    },
+    {
+      "id": 29,
+      "slug": "redis-lua-partial-commit",
+      "category": "C4",
+      "tier": "app",
+      "title": "Redis Lua partial transaction commit",
+      "flag": "ASTRA{redis_lua_partial_commit_5a74}"
+    },
+    {
+      "id": 30,
+      "slug": "kafka-dlq-deserialization",
+      "category": "C4",
+      "tier": "real",
+      "title": "Kafka poison-pill DLQ deserialization",
+      "flag": "ASTRA{kafka_dlq_deserialization_8c13}"
+    },
+    {
+      "id": 31,
+      "slug": "federation-entities-ssrf",
+      "category": "C4",
+      "tier": "app",
+      "title": "GraphQL Federation _entities spoofing via SSRF",
+      "flag": "ASTRA{federation_entities_ssrf_c1e8}"
+    },
+    {
+      "id": 32,
+      "slug": "postgres-jsonb-collation",
+      "category": "C4",
+      "tier": "real",
+      "title": "PostgreSQL JSONB path + ICU collation bypass",
+      "flag": "ASTRA{postgres_jsonb_collation_7e35}"
+    },
+    {
+      "id": 33,
+      "slug": "async-local-storage-leak",
+      "category": "C4",
+      "tier": "real",
+      "title": "AsyncLocalStorage context loss across native callbacks",
+      "flag": "ASTRA{async_local_storage_leak_b692}"
+    },
+    {
+      "id": 34,
+      "slug": "ai-memory-poison",
+      "category": "C4",
+      "tier": "real",
+      "title": "Multi-turn AI memory poisoning to tool hijack",
+      "flag": "ASTRA{ai_memory_poison_9b4e}"
+    },
+    {
+      "id": 35,
+      "slug": "llm-grammar-sqli",
+      "category": "C4",
+      "tier": "real",
+      "title": "Constrained-decoding escape to downstream SQLi",
+      "flag": "ASTRA{llm_grammar_sqli_d0c4}"
+    },
+    {
+      "id": 36,
+      "slug": "io-uring-pagecache",
+      "category": "C5",
+      "tier": "sim",
+      "title": "io_uring fixed buffer page-cache overwrite",
+      "flag": "ASTRA{io_uring_pagecache_escape_2b7f}"
+    },
+    {
+      "id": 37,
+      "slug": "nftables-netfilter-race",
+      "category": "C5",
+      "tier": "sim",
+      "title": "nf_tables transaction race to host kernel",
+      "flag": "ASTRA{nftables_netfilter_race_9e14}"
+    },
+    {
+      "id": 38,
+      "slug": "openat2-mount-race",
+      "category": "C5",
+      "tier": "sim",
+      "title": "openat2 RESOLVE_IN_ROOT mount race",
+      "flag": "ASTRA{openat2_mount_race_6c52}"
+    },
+    {
+      "id": 39,
+      "slug": "cgroup-psi-uaf",
+      "category": "C5",
+      "tier": "sim",
+      "title": "cgroupv2 PSI poll UAF",
+      "flag": "ASTRA{cgroup_psi_uaf_a7d3}"
+    },
+    {
+      "id": 40,
+      "slug": "keyring-heap-spray",
+      "category": "C5",
+      "tier": "sim",
+      "title": "Keyring quota heap spray into struct cred",
+      "flag": "ASTRA{keyring_heap_spray_1e80}"
+    },
+    {
+      "id": 41,
+      "slug": "cilium-sockops-bypass",
+      "category": "C5",
+      "tier": "sim",
+      "title": "Cilium sock_ops loopback policy bypass",
+      "flag": "ASTRA{cilium_sockops_bypass_5f29}"
+    },
+    {
+      "id": 42,
+      "slug": "envoy-wasm-memory",
+      "category": "C5",
+      "tier": "sim",
+      "title": "Envoy proxy-wasm heap corruption / SDS key",
+      "flag": "ASTRA{envoy_wasm_secret_dump_8a46}"
+    },
+    {
+      "id": 43,
+      "slug": "csi-targetpath-traversal",
+      "category": "C5",
+      "tier": "sim",
+      "title": "CSI NodeStage TargetPath traversal",
+      "flag": "ASTRA{csi_targetpath_traversal_3d97}"
+    },
+    {
+      "id": 44,
+      "slug": "buildkit-llb-injection",
+      "category": "C5",
+      "tier": "sim",
+      "title": "BuildKit LLB proto injection via frontend",
+      "flag": "ASTRA{buildkit_llb_injection_c5b0}"
+    },
+    {
+      "id": 45,
+      "slug": "oci-manifest-confusion",
+      "category": "C5",
+      "tier": "sim",
+      "title": "OCI manifest mediaType confusion / tar-split",
+      "flag": "ASTRA{oci_manifest_confusion_7a2e}"
+    },
+    {
+      "id": 46,
+      "slug": "seccomp-user-notif-toctou",
+      "category": "C5",
+      "tier": "sim",
+      "title": "SECCOMP_RET_USER_NOTIF pointer-swap TOCTOU",
+      "flag": "ASTRA{seccomp_user_notif_toctou_f804}"
+    },
+    {
+      "id": 47,
+      "slug": "shm-sidecar-race",
+      "category": "C5",
+      "tier": "sim",
+      "title": "/dev/shm sidecar ring-buffer race",
+      "flag": "ASTRA{shm_sidecar_race_2c6d}"
+    },
+    {
+      "id": 48,
+      "slug": "userfaultfd-stall",
+      "category": "C5",
+      "tier": "sim",
+      "title": "userfaultfd/FUSE deterministic race stall",
+      "flag": "ASTRA{userfaultfd_stall_9b51}"
+    },
+    {
+      "id": 49,
+      "slug": "gvisor-lisafs-confusion",
+      "category": "C5",
+      "tier": "sim",
+      "title": "gVisor sentry/gofer LISAFS handle confusion",
+      "flag": "ASTRA{gvisor_lisafs_confusion_4e73}"
+    },
+    {
+      "id": 50,
+      "slug": "firecracker-vsock-spoof",
+      "category": "C5",
+      "tier": "sim",
+      "title": "Firecracker/Kata vsock CID spoofing",
+      "flag": "ASTRA{firecracker_vsock_spoof_6d28}"
+    }
+  ]
+}

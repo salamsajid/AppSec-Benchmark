@@ -1,0 +1,10 @@
+{
+  "name": "astralane-wasi-target",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "express": "4.21.2",
+    "wabt": "1.0.39"
+  }
+}
